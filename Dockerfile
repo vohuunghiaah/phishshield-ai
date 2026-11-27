@@ -1,5 +1,5 @@
 FROM ghcr.io/astral-sh/uv:0.9.6 AS uv
-FROM python:3.11.15-slim
+FROM python:3.11.15-slim AS runtime
 COPY --from=uv /uv /usr/local/bin/uv
 WORKDIR /app
 ENV UV_PROJECT_ENVIRONMENT=/opt/venv PATH="/opt/venv/bin:$PATH" UV_PYTHON_DOWNLOADS=never PHISHSHIELD_ROOT=/app PYTHONDONTWRITEBYTECODE=1
@@ -13,3 +13,12 @@ ENV PYTHONPATH=/app/src HOME=/tmp
 USER 65534:65534
 CMD ["uvicorn","phishshield.api.app:app","--host","0.0.0.0","--port","8000"]
 
+
+FROM runtime AS fetcher
+USER root
+RUN apt-get update && apt-get install -y --no-install-recommends nftables && rm -rf /var/lib/apt/lists/*
+COPY deploy/fullscan/firewall.nft /app/firewall.nft
+COPY deploy/fullscan/start.sh /app/start-fetcher.sh
+ENTRYPOINT ["/bin/sh", "/app/start-fetcher.sh"]
+
+FROM runtime AS product

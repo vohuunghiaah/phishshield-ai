@@ -1,11 +1,16 @@
 """Opt-in static HTML retrieval through a trusted, externally isolated egress."""
 
 import http.client
+import re
 import ipaddress
 import socket
 import ssl
-from urllib.parse import urljoin, urlunsplit
+from urllib.parse import quote, urljoin, urlunsplit
 from phishshield.features.url_features import parse_url
+
+
+class FetchPolicyError(ValueError):
+    """A destination is outside the fetch policy."""
 
 
 def resolve_public(u):
@@ -14,10 +19,17 @@ def resolve_public(u):
         or u.password is not None
         or u.port not in (None, 443 if u.scheme == "https" else 80)
     ):
-        raise ValueError("Credentials or nonstandard port")
+        raise FetchPolicyError("Credentials or nonstandard port")
     host = u.hostname.encode("idna").decode()
-    if "%" in host or host.endswith(".local") or host.rstrip(".") == "localhost":
-        raise ValueError("Special host")
+    lower = host.lower().rstrip(".")
+    if (
+        "%" in host
+        or lower.endswith(
+            (".local", ".localhost", ".internal", ".localdomain", ".home.arpa")
+        )
+        or ("." not in lower and ":" not in lower)
+    ):
+        raise FetchPolicyError("Special host")
     answers = socket.getaddrinfo(
         host, u.port or (443 if u.scheme == "https" else 80), type=socket.SOCK_STREAM
     )
@@ -34,15 +46,23 @@ def resolve_public(u):
             or getattr(ip, "teredo", None)
             or (ip.version == 6 and ip not in ipaddress.ip_network("2000::/3"))
         ):
-            raise ValueError("Nonpublic address")
+            raise FetchPolicyError("Nonpublic address")
     if not answers:
         raise ValueError("DNS empty")
-    return host, answers[0]
+    for answer in answers:
+        if answer[0] == socket.AF_INET:
+            return host, answer
+    raise ValueError("No supported public IPv4 address")
 
 
 def fetch_inner(url, limit):
     for hop in range(4):
-        u = parse_url(url)
+        if len(url) > 8192:
+            raise FetchPolicyError("Location too long")
+        try:
+            u = parse_url(url)
+        except (ValueError, UnicodeError) as exc:
+            raise FetchPolicyError("Invalid location") from exc
         host, (family, kind, proto, _, addr) = resolve_public(u)
         with socket.socket(family, kind, proto) as raw:
             raw.settimeout(4)
@@ -56,6 +76,7 @@ def fetch_inner(url, limit):
             )
             with conn:
                 target = urlunsplit(("", "", u.path or "/", u.query, ""))
+                target = quote(target, safe="/?&=:+,;@!$()*%~-'")
                 authority = f"[{host}]" if ":" in host else host
                 conn.sendall(
                     f"GET {target} HTTP/1.1\r\nHost: {authority}\r\nAccept: text/html\r\nAccept-Encoding: identity\r\nConnection: close\r\n\r\n".encode(
@@ -79,6 +100,13 @@ def fetch_inner(url, limit):
                         != "identity"
                     ):
                         raise ValueError("Unsupported content encoding")
+                    if "attachment" in r.getheader("Content-Disposition", "").lower():
+                        raise ValueError("Expected inline HTML")
+                    size = r.getheader("Content-Length")
+                    if size is not None and (
+                        not re.fullmatch(r"[0-9]{1,12}", size) or int(size) > limit
+                    ):
+                        raise ValueError("Snapshot quá lớn")
                     data = r.read(limit + 1)
                     if len(data) > limit:
                         raise ValueError("Snapshot quá lớn")
@@ -91,8 +119,12 @@ def fetch_inner(url, limit):
 def _worker(pipe, url, limit):
     try:
         pipe.send((True, fetch_inner(url, limit)))
-    except Exception as exc:
-        pipe.send((False, type(exc).__name__))
+    except FetchPolicyError:
+        pipe.send((False, "policy"))
+    except (ValueError, OSError, http.client.HTTPException, LookupError):
+        pipe.send((False, "site"))
+    except Exception:
+        pipe.send((False, "worker"))
     finally:
         pipe.close()
 
@@ -111,7 +143,11 @@ def fetch(url, limit):
             raise TimeoutError("HTML fetch timed out")
         ok, value = reader.recv()
         if not ok:
-            raise ValueError(value)
+            if value == "policy":
+                raise FetchPolicyError("Destination blocked")
+            if value == "site":
+                raise ValueError("Document unavailable")
+            raise RuntimeError("Collection failed internally")
         return value
     finally:
         reader.close()

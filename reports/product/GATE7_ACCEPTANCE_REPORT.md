@@ -1,5 +1,7 @@
 # Gate 7 · Nghiệm thu sản phẩm PhishShield AI
 
+Cập nhật 28/11/2026. Trạng thái bên dưới ghi nhận lần nghiệm thu Gate 7 ban đầu. [Kết quả nghiệm thu Full Scan sau khi bổ sung worker cô lập](FULL_SCAN_ACCEPTANCE.md).
+
 **READY FOR LOCAL DEMO. Full Scan thu thập HTML từ Internet: BLOCKED.** Trưởng nhóm Võ Hữu Nghĩa. Ngày 28/11/2026.
 
 ## A. Tóm tắt điều hành
@@ -84,4 +86,3 @@ Full Scan Internet cần thiết kế/kiểm chứng egress riêng trước khi 
 | Regression, HTTP, browser, restart và offline | PASS |
 | GitHub main, CI và clone sạch | PASS |
 | Bộ tài liệu và kịch bản bảo vệ | READY FOR LOCAL DEMO |
-

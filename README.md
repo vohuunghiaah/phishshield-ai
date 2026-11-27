@@ -1,6 +1,6 @@
 # PhishShield AI
 
-Ứng dụng tiếng Việt sàng lọc website bằng Random Forest đã huấn luyện trên CompPhish v4. Nhập URL để phân tích ngoại tuyến, hoặc đính kèm HTML tĩnh để dùng mô hình chính. Streamlit gọi FastAPI qua HTTP. Mỗi kết quả có điểm, ngưỡng thực, phiên bản checkpoint và các yếu tố đóng góp.
+Ứng dụng tiếng Việt sàng lọc website bằng Random Forest đã huấn luyện trên CompPhish v4. Nhập URL trong Full Scan để ứng dụng tự tải HTML tĩnh và chạy mô hình chính. Quick Scan phân tích URL ngoại tuyến, còn Snapshot Analysis dùng HTML bạn cung cấp. Streamlit gọi FastAPI qua HTTP. Mỗi kết quả có điểm, ngưỡng thực, phiên bản checkpoint và các yếu tố đóng góp.
 
 ![Kết quả với snapshot tổng hợp](reports/product/screenshots/02_html_primary.png)
 
@@ -12,8 +12,10 @@ Cần Git, PowerShell, uv, hai cổng local trống và bộ model **phishshield
 git clone https://github.com/vohuunghiaah/phishshield-ai.git
 cd phishshield-ai
 .\setup.ps1 -ModelSource 'C:\path\to\phishshield-models-v1.0.0.zip'
-.\start.ps1
+.\start.ps1 -FullScan
 ```
+
+Full Scan cần Docker Desktop chạy Linux containers và kết nối Internet. Dùng `.\start.ps1 -Offline` cho Quick Scan và Snapshot Analysis. Sau khi dừng ứng dụng, chạy `docker compose -f compose.fetcher.yaml down` để dừng worker.
 
 Mở [giao diện](http://127.0.0.1:8501) hoặc [Swagger](http://127.0.0.1:8000/docs). Dừng bằng Ctrl+C trong cửa sổ chạy hoặc `.\stop.ps1` từ cửa sổ khác. Bộ cài đối chiếu checksum và so dự đoán của cả hai model với fixture đã lưu. Google Drive chỉ cần khi thành viên chọn cài model trực tiếp từ thư mục nghiên cứu được cấp quyền. [Cài model](docs/product/MODEL_INSTALLATION_GUIDE.md) · [Windows](docs/product/LOCAL_DEPLOYMENT_GUIDE.md).
 
@@ -23,7 +25,7 @@ Mở [giao diện](http://127.0.0.1:8501) hoặc [Swagger](http://127.0.0.1:8000
 |---|---|---|
 | Quick Scan | URL HTTP(S), không truy cập trang | RF 17 biến, seed 44, ngưỡng 0,15 |
 | Snapshot Analysis | URL và snapshot HTML tĩnh, tối đa 8 MiB | RF 34 biến, seed 43, ngưỡng 0,20 |
-| Full Scan | Yêu cầu lấy HTML trực tuyến | Thu thập bị khóa khi chưa có egress cô lập được thẩm định. API trả lý do và kết quả Quick Scan |
+| Full Scan | URL HTTP(S) công khai, HTML tĩnh tối đa 2 MiB | RF 34 biến, seed 43, ngưỡng 0,20. Nếu website không cung cấp được HTML, dùng RF 17 biến và hiển thị lý do |
 
 HTML được xử lý trong parser tĩnh. Điểm chưa được calibration. Giải thích runtime dùng hiệu điểm khi thay từng biến từ trung vị Train. [An toàn và giới hạn](docs/product/SECURITY_MODEL.md) · [Hướng dẫn sử dụng](docs/product/USER_GUIDE.md).
 
@@ -32,12 +34,12 @@ HTML được xử lý trong parser tĩnh. Điểm chưa được calibration. G
 ```python
 import requests
 r = requests.post("http://127.0.0.1:8000/predict",
-                  json={"url":"https://example.org/","mode":"quick"},timeout=25)
+                  json={"url":"https://example.org/","mode":"full"},timeout=25)
 r.raise_for_status()
 print(r.json())
 ```
 
-Sau khi cài model, có thể chạy `docker compose up --build -d` thay cho launcher Windows. Cả hai service bind ở loopback của máy chủ. Checkpoint mount read-only cho API. [Docker](docs/product/DOCKER_DEPLOYMENT_GUIDE.md) · [Contract](docs/product/API_REFERENCE.md).
+Sau khi cài model, có thể chạy `docker compose -f compose.yaml -f compose.fullscan.yaml up --build -d --wait` thay cho launcher Windows. Cả hai service bind ở loopback của máy chủ. Checkpoint mount read-only cho API. [Docker](docs/product/DOCKER_DEPLOYMENT_GUIDE.md) · [Contract](docs/product/API_REFERENCE.md).
 
 ## Bằng chứng nghiên cứu
 
@@ -59,9 +61,8 @@ uv run --no-sync pytest -q
 uv run --no-sync python scripts/verify_local.py
 ```
 
-Lệnh cuối cần API đang chạy. CI sử dụng fixture tổng hợp. Chấp nhận hai checkpoint chính thức được kiểm tra local với bundle riêng. [Yêu cầu sản phẩm](docs/product/PRODUCT_REQUIREMENTS.md) · [Kiến trúc](docs/product/SYSTEM_ARCHITECTURE.md) · [Kịch bản demo](docs/product/DEMO_GUIDE.md) · [Xử lý sự cố](docs/product/TROUBLESHOOTING.md) · [Kết quả Gate 7](reports/product/GATE7_ACCEPTANCE_REPORT.md).
+Lệnh cuối cần API đang chạy. CI sử dụng fixture tổng hợp. Chấp nhận hai checkpoint chính thức được kiểm tra local với bundle riêng. [Yêu cầu sản phẩm](docs/product/PRODUCT_REQUIREMENTS.md) · [Kiến trúc](docs/product/SYSTEM_ARCHITECTURE.md) · [Kịch bản demo](docs/product/DEMO_GUIDE.md) · [Xử lý sự cố](docs/product/TROUBLESHOOTING.md) · [Nghiệm thu Full Scan](reports/product/FULL_SCAN_ACCEPTANCE.md) · [Kết quả Gate 7](reports/product/GATE7_ACCEPTANCE_REPORT.md).
 
 ## Nhóm thực hiện
 
 Gịp Xương Thanh Quyền phụ trách Random Forest. Vũ Thị Tuyết Trang phụ trách XGBoost. Võ Hữu Nghĩa phụ trách MLP và trưởng nhóm.
-

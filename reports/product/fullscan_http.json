@@ -1,0 +1,66 @@
+{
+  "fixture": "https://example.org/",
+  "html_bytes": 577,
+  "fixture_sha256": "25ddf2c883e0d1958ea971d279a7e4f0fd446724ee3db7db19dadabd4a62e484",
+  "full_scan": {
+    "prediction": 0,
+    "phishing_probability": 0.11169502608384249,
+    "risk_level": "thấp",
+    "model_name": "random_forest",
+    "model_version": "0a78a47a3a46",
+    "model_phase": "TUNED_V2",
+    "feature_count": 34,
+    "feature_modality": "url_html",
+    "html_extraction_status": "fetched",
+    "threshold": 0.2,
+    "explanation": {
+      "text": "Phân loại theo ngưỡng validation. Kết quả là ước lượng của mô hình.",
+      "method": "Thay từng biến từ trung vị train theo thứ tự schema",
+      "contributions": [
+        {
+          "feature": "url_length",
+          "value": 20.0,
+          "contribution": -0.09000193033087758
+        },
+        {
+          "feature": "entropy",
+          "value": 3.7841837197791888,
+          "contribution": -0.06675250325023876
+        },
+        {
+          "feature": "html_length",
+          "value": 577.0,
+          "contribution": 0.02750992063492063
+        },
+        {
+          "feature": "anchor_count",
+          "value": 0.0,
+          "contribution": 0.027091026741353164
+        },
+        {
+          "feature": "dot_count",
+          "value": 1.0,
+          "contribution": -0.026454906204906203
+        }
+      ]
+    },
+    "warnings": [
+      "HTTPS riêng lẻ không chứng minh độ an toàn."
+    ],
+    "fallback_reason": null,
+    "processing_ms": 190.268,
+    "fetch_ms": 1396.65
+  },
+  "quick_features": 17,
+  "snapshot_score_difference": 2.7755575615628914e-17,
+  "private_target": {
+    "status": 422,
+    "detail": "Đích URL không được chính sách mạng Full Scan cho phép."
+  },
+  "dns_failure": "fetch_failed",
+  "worker": {
+    "protocol": "phishshield-static-v1",
+    "confinement": "active"
+  },
+  "missing_rpc_header": 415
+}

@@ -7,3 +7,6 @@
 *.pdf binary
 *.docx binary
 
+
+*.sh text eol=lf
+*.nft text eol=lf

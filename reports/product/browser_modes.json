@@ -1,5 +1,5 @@
 {
-  "full": "explicit URL-only fallback",
+  "full": "live HTML / primary 34",
   "invalid": "validation error rendered",
   "swagger": "executed GET /health: 200"
 }
