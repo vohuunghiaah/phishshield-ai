@@ -1,0 +1,7 @@
+# Bàn giao GitHub
+
+Đích công khai **vohuunghiaah/phishshield-ai**, tài khoản xác minh vohuunghiaah, quyền ADMIN. Kiểm tra trước khi clone cho thấy remote chưa có branch/commit. Theo quy tắc Gate 7 cho repository trống, initial commit được push trực tiếp lên main. Không tạo PR hoặc merge. Không đổi visibility. Artifact model và ZIP chỉ lưu local.
+
+Commit triển khai dùng cho clean clone là **6853f39b95df9558be4277f23e188091a587335e**. git ls-remote và API GitHub xác nhận SHA. Remote tree ban đầu có 241 blob, gồm 28 bảng, 30 hình PNG, bốn tài liệu DOCX/PDF và thư mục ảnh E2E. File lớn nhất khoảng 2,06 MB. Git index đã kiểm secret patterns, định dạng cấm, kích thước và notebook outputs. Không có joblib, raw cohort, snapshot thật, OOF, log người dùng hoặc bundle trong commit. T24 được gộp theo outcome. Các bản nội bộ đầy đủ lưu riêng tại máy local và Drive.
+
+CI Linux CPU hoàn tất dependency sync, lint, secret/path audit, pytest, wheel build và Docker build. CI dùng fixture tổng hợp; mô hình thật được thẩm định trong clean clone Windows. Biên bản này thuộc commit bàn giao bổ sung sau khi nghiệm thu xong initial commit. [Commit sản phẩm](https://github.com/vohuunghiaah/phishshield-ai/commit/6853f39b95df9558be4277f23e188091a587335e) · [CI sản phẩm đã đạt](https://github.com/vohuunghiaah/phishshield-ai/actions/runs/46052200695) · [Lịch sử main](https://github.com/vohuunghiaah/phishshield-ai/commits/main/).

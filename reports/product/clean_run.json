@@ -1,0 +1,54 @@
+{
+  "commit": "6853f39b95df9558be4277f23e188091a587335e",
+  "cycles": [
+    {
+      "cycle": 1,
+      "api_ready_seconds": 10.346933199998603,
+      "ui_ready_seconds": 17.92873790000158,
+      "roles": [
+        [
+          17,
+          0.15
+        ],
+        [
+          34,
+          0.2
+        ]
+      ]
+    },
+    {
+      "cycle": 2,
+      "api_ready_seconds": 7.541603099998611,
+      "ui_ready_seconds": 8.648178200000984,
+      "roles": [
+        [
+          17,
+          0.15
+        ],
+        [
+          34,
+          0.2
+        ]
+      ]
+    },
+    {
+      "cycle": 3,
+      "api_ready_seconds": 7.867251799998485,
+      "ui_ready_seconds": 9.09547869999733,
+      "roles": [
+        [
+          17,
+          0.15
+        ],
+        [
+          34,
+          0.2
+        ]
+      ]
+    }
+  ],
+  "guard_processes": 12,
+  "app_network": "loopback only",
+  "external_file_access": "G:/ and product development tree denied",
+  "browser": "Quick, Snapshot, explanation, metrics, mobile"
+}
