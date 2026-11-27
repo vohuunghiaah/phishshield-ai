@@ -1,0 +1,27 @@
+model,parameter,space
+random_forest,n_estimators,"[50, 100, 200, 300, 500]"
+random_forest,min_samples_leaf,"[1, 2, 4, 8]"
+random_forest,n_jobs,[-1]
+random_forest,class_weight,"[null, ""balanced""]"
+random_forest,max_depth,"[10, 20, 30, null]"
+random_forest,max_features,"[""sqrt"", ""log2"", 0.5]"
+random_forest,min_samples_split,"[2, 5, 10]"
+xgboost,n_estimators,"[100, 200, 250, 300, 500]"
+xgboost,learning_rate,"[0.01, 0.03, 0.06, 0.1]"
+xgboost,max_depth,"[3, 5, 7, 9]"
+xgboost,tree_method,"[""hist""]"
+xgboost,eval_metric,"[""logloss""]"
+xgboost,n_jobs,[2]
+xgboost,min_child_weight,"[1, 3, 5]"
+xgboost,subsample,"[0.7, 0.8, 1.0]"
+xgboost,colsample_bytree,"[0.7, 0.8, 1.0]"
+xgboost,gamma,"[0, 0.1, 0.5]"
+xgboost,reg_alpha,"[0, 0.1, 1]"
+xgboost,reg_lambda,"[0.1, 1, 5, 10]"
+mlp,hidden,"[32, 64, 128, 256]"
+mlp,batch_size,"[32, 64, 128, 256]"
+mlp,epochs,"[80, 150, 200]"
+mlp,patience,[8]
+mlp,learning_rate,"[0.0001, 0.0005, 0.001]"
+mlp,weight_decay,"[0, 0.0001, 0.001]"
+mlp,dropout,"[0, 0.1, 0.3]"

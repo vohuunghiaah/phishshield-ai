@@ -1,0 +1,5 @@
+{
+  "full": "explicit URL-only fallback",
+  "invalid": "validation error rendered",
+  "swagger": "executed GET /health: 200"
+}

@@ -1,0 +1,373 @@
+[
+  {
+    "method": "GET",
+    "path": "/health",
+    "input": null,
+    "status": 200,
+    "response": {
+      "status": "ok"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/ready",
+    "input": null,
+    "status": 200,
+    "response": {
+      "status": "ready"
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/docs",
+    "input": null,
+    "status": 200,
+    "response": {
+      "title": "Swagger UI",
+      "bytes": 938
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/model/info",
+    "input": null,
+    "status": 200,
+    "response": {
+      "primary": {
+        "model": "random_forest",
+        "modality": "url_html",
+        "phase": "TUNED_V2",
+        "threshold": 0.2,
+        "seed": 43,
+        "feature_version": "1.0.0",
+        "checkpoint_sha256": "0a78a47a3a46579cabed3da4d68ed926573fd87df3df45afc9d59e24468ef948",
+        "feature_count": 34
+      },
+      "url_fallback": {
+        "model": "random_forest",
+        "modality": "url_only",
+        "phase": "TUNED_V2",
+        "threshold": 0.15,
+        "seed": 44,
+        "feature_version": "1.0.0",
+        "checkpoint_sha256": "0ce231574e7d61d7fdedb65b85f00c7cc1ecdd5e02859cb48bb4ea955f9a2897",
+        "feature_count": 17
+      }
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict",
+    "input": {
+      "url": "https://example.org/"
+    },
+    "status": 200,
+    "response": {
+      "prediction": 0,
+      "phishing_probability": 0.05207749236559011,
+      "risk_level": "thấp",
+      "model_name": "random_forest",
+      "model_version": "0ce231574e7d",
+      "model_phase": "TUNED_V2",
+      "feature_count": 17,
+      "feature_modality": "url_only",
+      "html_extraction_status": "disabled",
+      "threshold": 0.15,
+      "explanation": {
+        "text": "Phân loại theo ngưỡng validation. Kết quả là ước lượng của mô hình.",
+        "method": "Thay từng biến từ trung vị train theo thứ tự schema",
+        "contributions": [
+          {
+            "feature": "subdomain_count",
+            "value": 0.0,
+            "contribution": 0.07399642509903329
+          },
+          {
+            "feature": "special_count",
+            "value": 5.0,
+            "contribution": -0.04628202719395044
+          },
+          {
+            "feature": "dot_count",
+            "value": 1.0,
+            "contribution": -0.031093353061580453
+          },
+          {
+            "feature": "entropy",
+            "value": 3.7841837197791888,
+            "contribution": -0.03037133067158635
+          },
+          {
+            "feature": "url_length",
+            "value": 20.0,
+            "contribution": -0.01846492234413423
+          }
+        ]
+      },
+      "warnings": [
+        "HTTPS riêng lẻ không chứng minh độ an toàn."
+      ],
+      "fallback_reason": null,
+      "processing_ms": 110.464
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict",
+    "input": {
+      "url": "https://example.org/",
+      "html": "<html><title>Example</title><p>Local fixture</p><script type='text/plain'>inert</script></html>"
+    },
+    "status": 200,
+    "response": {
+      "prediction": 0,
+      "phishing_probability": 0.15434539841045788,
+      "risk_level": "thấp",
+      "model_name": "random_forest",
+      "model_version": "0a78a47a3a46",
+      "model_phase": "TUNED_V2",
+      "feature_count": 34,
+      "feature_modality": "url_html",
+      "html_extraction_status": "snapshot",
+      "threshold": 0.2,
+      "explanation": {
+        "text": "Phân loại theo ngưỡng validation. Kết quả là ước lượng của mô hình.",
+        "method": "Thay từng biến từ trung vị train theo thứ tự schema",
+        "contributions": [
+          {
+            "feature": "url_length",
+            "value": 20.0,
+            "contribution": -0.09000193033087761
+          },
+          {
+            "feature": "entropy",
+            "value": 3.7841837197791888,
+            "contribution": -0.06675250325023876
+          },
+          {
+            "feature": "anchor_count",
+            "value": 0.0,
+            "contribution": 0.052480324787778365
+          },
+          {
+            "feature": "html_length",
+            "value": 95.0,
+            "contribution": 0.03267555210489991
+          },
+          {
+            "feature": "tag_count",
+            "value": 6.0,
+            "contribution": 0.02765498919821424
+          }
+        ]
+      },
+      "warnings": [
+        "HTTPS riêng lẻ không chứng minh độ an toàn."
+      ],
+      "fallback_reason": null,
+      "processing_ms": 191.099
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict-from-html",
+    "input": {
+      "url": "https://example.org/",
+      "html": "<html><title>Example</title><p>Local fixture</p><script type='text/plain'>inert</script></html>"
+    },
+    "status": 200,
+    "response": {
+      "prediction": 0,
+      "phishing_probability": 0.15434539841045788,
+      "risk_level": "thấp",
+      "model_name": "random_forest",
+      "model_version": "0a78a47a3a46",
+      "model_phase": "TUNED_V2",
+      "feature_count": 34,
+      "feature_modality": "url_html",
+      "html_extraction_status": "snapshot",
+      "threshold": 0.2,
+      "explanation": {
+        "text": "Phân loại theo ngưỡng validation. Kết quả là ước lượng của mô hình.",
+        "method": "Thay từng biến từ trung vị train theo thứ tự schema",
+        "contributions": [
+          {
+            "feature": "url_length",
+            "value": 20.0,
+            "contribution": -0.09000193033087761
+          },
+          {
+            "feature": "entropy",
+            "value": 3.7841837197791888,
+            "contribution": -0.06675250325023876
+          },
+          {
+            "feature": "anchor_count",
+            "value": 0.0,
+            "contribution": 0.05248032478777834
+          },
+          {
+            "feature": "html_length",
+            "value": 95.0,
+            "contribution": 0.03267555210489991
+          },
+          {
+            "feature": "tag_count",
+            "value": 6.0,
+            "contribution": 0.02765498919821424
+          }
+        ]
+      },
+      "warnings": [
+        "HTTPS riêng lẻ không chứng minh độ an toàn."
+      ],
+      "fallback_reason": null,
+      "processing_ms": 190.617
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/explain",
+    "input": {
+      "url": "https://example.org/",
+      "html": "<html><title>Example</title><p>Local fixture</p><script type='text/plain'>inert</script></html>"
+    },
+    "status": 200,
+    "response": {
+      "prediction": 0,
+      "phishing_probability": 0.15434539841045788,
+      "risk_level": "thấp",
+      "model_name": "random_forest",
+      "model_version": "0a78a47a3a46",
+      "model_phase": "TUNED_V2",
+      "feature_count": 34,
+      "feature_modality": "url_html",
+      "html_extraction_status": "snapshot",
+      "threshold": 0.2,
+      "explanation": {
+        "text": "Phân loại theo ngưỡng validation. Kết quả là ước lượng của mô hình.",
+        "method": "Thay từng biến từ trung vị train theo thứ tự schema",
+        "contributions": [
+          {
+            "feature": "url_length",
+            "value": 20.0,
+            "contribution": -0.09000193033087767
+          },
+          {
+            "feature": "entropy",
+            "value": 3.7841837197791888,
+            "contribution": -0.06675250325023876
+          },
+          {
+            "feature": "anchor_count",
+            "value": 0.0,
+            "contribution": 0.052480324787778365
+          },
+          {
+            "feature": "html_length",
+            "value": 95.0,
+            "contribution": 0.03267555210489991
+          },
+          {
+            "feature": "tag_count",
+            "value": 6.0,
+            "contribution": 0.02765498919821424
+          }
+        ]
+      },
+      "warnings": [
+        "HTTPS riêng lẻ không chứng minh độ an toàn."
+      ],
+      "fallback_reason": null,
+      "processing_ms": 182.381
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict",
+    "input": {
+      "url": ""
+    },
+    "status": 422,
+    "response": {
+      "detail": "Dữ liệu JSON hoặc trường đầu vào không hợp lệ."
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict",
+    "input": {
+      "url": "invalid"
+    },
+    "status": 422,
+    "response": {
+      "detail": "URL HTTP(S) không hợp lệ."
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict",
+    "input": {
+      "url": "https://example.org/",
+      "html": "  "
+    },
+    "status": 422,
+    "response": {
+      "detail": "Snapshot rỗng."
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict",
+    "input": {
+      "html_bytes": 8388609
+    },
+    "status": 413,
+    "response": {
+      "detail": "Snapshot quá lớn."
+    }
+  },
+  {
+    "method": "POST",
+    "path": "/predict",
+    "input": null,
+    "status": 422,
+    "response": {
+      "detail": "Dữ liệu JSON hoặc trường đầu vào không hợp lệ."
+    }
+  },
+  {
+    "method": "GET",
+    "path": "/performance",
+    "input": null,
+    "status": 200,
+    "response": {
+      "split": "locked_test",
+      "model": "random_forest",
+      "modality": "url_html",
+      "metrics": {
+        "accuracy": 0.9286646367986081,
+        "precision": 0.8782104391052196,
+        "recall": 0.9842154131847726,
+        "f1": 0.9281961471103327,
+        "f2": 0.9610154125113327,
+        "macro_f1": 0.9286615999164456,
+        "roc_auc": 0.9897872036495874,
+        "pr_auc": 0.9894786592475854,
+        "average_precision": 0.9894837846116757,
+        "fpr": 0.12029459901800327,
+        "fnr": 0.015784586815227482,
+        "confusion_matrix": [
+          [
+            1075,
+            147
+          ],
+          [
+            17,
+            1060
+          ]
+        ]
+      }
+    }
+  }
+]

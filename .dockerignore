@@ -1,0 +1,13 @@
+**
+!src/
+!src/phishshield/
+!src/phishshield/**
+**/__pycache__/
+!configs/
+!configs/api.yaml
+!pyproject.toml
+!uv.lock
+!MODEL_MANIFEST.json
+
+!.streamlit/
+!.streamlit/config.toml

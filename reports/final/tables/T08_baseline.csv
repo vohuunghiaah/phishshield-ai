@@ -1,0 +1,16 @@
+model,parameter,value
+random_forest,n_estimators,200
+random_forest,min_samples_leaf,2
+random_forest,n_jobs,-1
+random_forest,class_weight,balanced
+xgboost,n_estimators,250
+xgboost,learning_rate,0.06
+xgboost,max_depth,5
+xgboost,tree_method,hist
+xgboost,eval_metric,logloss
+xgboost,n_jobs,2
+mlp,hidden,64
+mlp,batch_size,128
+mlp,epochs,80
+mlp,patience,8
+mlp,learning_rate,0.001

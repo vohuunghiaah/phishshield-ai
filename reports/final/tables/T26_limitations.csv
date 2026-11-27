@@ -1,0 +1,11 @@
+threat,scope
+External validity,Một corpus; chưa kiểm thử bên ngoài
+Thời gian,Chưa có temporal split hoặc drift benchmark
+Leakage,Near duplicates/campaign chưa có kiểm tra đầy đủ
+Seed,Ba seed chung một split
+Search,"24 candidate, một seed"
+MLP,Inner stopping giảm số hàng fit
+Vận hành,FP đáng kể; fallback chưa chấm Test
+Calibration,Điểm chưa hiệu chuẩn độc lập
+Attribution,"Tương quan, phụ thuộc nền và thứ tự"
+Triển khai,"Demo loopback, chưa benchmark tải hay egress"

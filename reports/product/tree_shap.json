@@ -1,0 +1,30 @@
+{
+  "primary": {
+    "shap": "0.47.2",
+    "background": "Train 32",
+    "samples": "Validation 8",
+    "build_ms": 32.455900000059046,
+    "shape": [
+      1,
+      34,
+      2
+    ],
+    "p50_ms": 42.964199999914854,
+    "p95_ms": 75.2376649988946,
+    "max_residual": 2.7446496853045232e-08
+  },
+  "url_fallback": {
+    "shap": "0.47.2",
+    "background": "Train 32",
+    "samples": "Validation 8",
+    "build_ms": 35.144099998433376,
+    "shape": [
+      1,
+      17,
+      2
+    ],
+    "p50_ms": 26.25244999944698,
+    "p95_ms": 45.30322499958856,
+    "max_residual": 2.1231366442719946e-08
+  }
+}

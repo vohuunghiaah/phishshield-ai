@@ -1,0 +1,29 @@
+id,file,source,rows
+T01,T01_dataset.csv,manifests/dataset_manifest.json,8
+T02,T02_data_audit.csv,manifests/dataset_manifest.json,1
+T03,T03_classes.csv,cohort.csv × assignments.csv,6
+T04,T04_dictionary.csv,src/phishshield/features,34
+T05,T05_splits.csv,locked split × connected_groups,3
+T06,T06_folds.csv,cv_folds.csv × cohort label,3
+T07,T07_hardware.csv,run_manifest.json,36
+T08,T08_baseline.csv,configs/models.yaml; results/baseline_v1/effective_parameters.json,15
+T09,T09_spaces.csv,configs/tuning/*.yaml,26
+T10,T10_matrix.csv,experiment_integrity.csv,18
+T11,T11_baseline_seeds.csv,results/baseline_v1/validation.csv,18
+T12,T12_baseline_summary.csv,"T11, sample SD",6
+T13,T13_trials.csv,"6 × tuning_summary.csv, verified OOF",144
+T14,T14_parameters.csv,6 × tuning_lock.json,52
+T15,T15_tuned_seeds.csv,results/comparisons/v2/per_seed.csv,18
+T16,T16_tuned_summary.csv,"T15, sample SD",6
+T17,T17_paired_seeds.csv,T11 × T15 on seed,198
+T18,T18_ablation.csv,"T11 and T15, paired by seed",66
+T19,T19_paired_statistics.csv,T17,66
+T20,T20_selection.csv,model_selection_v2.json,2
+T21,T21_test_metrics.csv,locked_test.json verified from locked_test.csv,11
+T22,T22_confusion.csv,locked_test.csv,2
+T23,T23_shap.csv,24 Validation SHAP contributions,34
+T24,T24_error_cases.csv,locked_test.csv × locked url_html features; serial IDs only (public aggregate),4
+T25,T25_cost.csv,Run manifests; V1 fit-only timing unavailable,36
+T26,T26_limitations.csv,Protocol V2 and frozen evaluation scope,10
+T27,T27_qc.csv,"final_audit.py, HTTP evidence, pytest, UI screenshots and deployment guide",26
+T28,T28_registry.csv,artifact_checksums.json (public aggregate),15

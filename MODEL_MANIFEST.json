@@ -1,0 +1,137 @@
+{
+  "version": "1.0.0",
+  "scikit_learn": "1.6.1",
+  "phase": "TUNED_V2",
+  "files": {
+    "manifests/model_selection_v2.json": {
+      "sha256": "a0d5100ce5866e8281699795d27adf13caddb219b41aa94e65fb25eaa4bff606",
+      "bytes": 4435
+    },
+    "results/metrics/locked_test.json": {
+      "sha256": "588c9452afa9e656d7e2d60a25c8e46c5efd043f419cd2e5ee935165c1a44cdd",
+      "bytes": 1096
+    },
+    "checkpoints/selected_model/primary/model.joblib": {
+      "sha256": "0a78a47a3a46579cabed3da4d68ed926573fd87df3df45afc9d59e24468ef948",
+      "bytes": 4787201
+    },
+    "checkpoints/selected_model/primary/selection.json": {
+      "sha256": "1cf44a81a5fccf6dc1850b492f498deb44913cce2c490df328dd22c825fcc946",
+      "bytes": 500
+    },
+    "checkpoints/selected_model/url_fallback/model.joblib": {
+      "sha256": "0ce231574e7d61d7fdedb65b85f00c7cc1ecdd5e02859cb48bb4ea955f9a2897",
+      "bytes": 2775878
+    },
+    "checkpoints/selected_model/url_fallback/selection.json": {
+      "sha256": "d83c2945bd126d99aa88df6089d7e3edddf792dfca34a148dda7bf5f69453e67",
+      "bytes": 506
+    }
+  },
+  "models": {
+    "primary": {
+      "threshold": 0.2,
+      "seed": 43,
+      "modality": "url_html",
+      "sha256": "0a78a47a3a46579cabed3da4d68ed926573fd87df3df45afc9d59e24468ef948",
+      "trial": "C019",
+      "parameters": {
+        "n_estimators": 300,
+        "min_samples_leaf": 2,
+        "n_jobs": -1,
+        "class_weight": null,
+        "max_depth": null,
+        "max_features": "log2",
+        "min_samples_split": 5
+      },
+      "columns": [
+        "url_length",
+        "hostname_length",
+        "path_length",
+        "subdomain_count",
+        "dot_count",
+        "hyphen_count",
+        "digit_count",
+        "digit_ratio",
+        "special_count",
+        "query_count",
+        "https",
+        "ip_host",
+        "keyword_count",
+        "entropy",
+        "encoded_count",
+        "punycode",
+        "explicit_port",
+        "html_length",
+        "tag_count",
+        "form_count",
+        "password_count",
+        "hidden_count",
+        "external_link_ratio",
+        "external_action_count",
+        "iframe_count",
+        "script_count",
+        "external_script_count",
+        "image_count",
+        "anchor_count",
+        "empty_action_count",
+        "has_title",
+        "has_favicon",
+        "suspicious_form_count",
+        "sensitive_input"
+      ]
+    },
+    "url_fallback": {
+      "threshold": 0.15,
+      "seed": 44,
+      "modality": "url_only",
+      "sha256": "0ce231574e7d61d7fdedb65b85f00c7cc1ecdd5e02859cb48bb4ea955f9a2897",
+      "trial": "C022",
+      "parameters": {
+        "n_estimators": 300,
+        "min_samples_leaf": 4,
+        "n_jobs": -1,
+        "class_weight": null,
+        "max_depth": 10,
+        "max_features": "log2",
+        "min_samples_split": 5
+      },
+      "columns": [
+        "url_length",
+        "hostname_length",
+        "path_length",
+        "subdomain_count",
+        "dot_count",
+        "hyphen_count",
+        "digit_count",
+        "digit_ratio",
+        "special_count",
+        "query_count",
+        "https",
+        "ip_host",
+        "keyword_count",
+        "entropy",
+        "encoded_count",
+        "punycode",
+        "explicit_port"
+      ]
+    }
+  },
+  "fixtures": {
+    "primary": {
+      "input": {
+        "url": "https://example.org/",
+        "html": "<html><title>Example</title><p>Local fixture</p><script type='text/plain'>inert</script></html>"
+      },
+      "score": 0.15434539841045788,
+      "prediction": 0
+    },
+    "url_fallback": {
+      "input": {
+        "url": "https://example.org/"
+      },
+      "score": 0.05207749236559011,
+      "prediction": 0
+    }
+  }
+}

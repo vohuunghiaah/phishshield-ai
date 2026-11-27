@@ -1,0 +1,9 @@
+sensitivity: hidden
+baseline_defaults: {weight_decay: 0, dropout: 0}
+space:
+  hidden: [32, 64, 128, 256]
+  learning_rate: [0.0001, 0.0005, 0.001]
+  batch_size: [32, 64, 128, 256]
+  dropout: [0, 0.1, 0.3]
+  weight_decay: [0, 0.0001, 0.001]
+  epochs: [80, 150, 200]

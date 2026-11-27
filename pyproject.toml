@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phishshield"
+version = "0.1.0"
+description = "Offline URL and HTML phishing detection with CompPhish v4"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+ "numpy==2.2.6", "pandas==2.2.3", "scikit-learn==1.6.1", "tldextract==5.3.0",
+ "lxml==5.4.0", "openpyxl==3.1.5", "pyyaml==6.0.2", "matplotlib==3.10.3",
+ "fastapi==0.115.12", "httpx==0.28.1", "joblib==1.5.1"
+]
+
+[project.optional-dependencies]
+tuning = ["pyarrow==26.0.1"]
+trees = ["xgboost-cpu==3.0.2; sys_platform == 'linux' and platform_machine == 'x86_64'", "xgboost==3.0.2; sys_platform != 'linux' or platform_machine != 'x86_64'"]
+mlp = ["torch==2.8.0"]
+demo = ["streamlit==1.45.1", "uvicorn==0.34.3"]
+explain = ["shap==0.47.2"]
+test = ["pytest==8.3.5", "nbformat==5.10.4"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
+
+[tool.uv.sources]
+torch = [{index = "pytorch-cpu", marker = "sys_platform != 'darwin'"}]

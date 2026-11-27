@@ -1,0 +1,8 @@
+name: CompPhish
+version: 4
+doi: 10.17632/fmbs4kp9wz.4
+license: CC BY 4.0
+source: https://data.mendeley.com/datasets/fmbs4kp9wz/4
+expected: {samples: 15358, phishing: 7204, legitimate: 8154, precomputed_features: 70}
+max_archive_bytes: 17179869184
+max_member_bytes: 134217728

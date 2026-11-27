@@ -1,0 +1,37 @@
+services:
+  api:
+    build: .
+    image: phishshield-local:gate7
+    ports: ["127.0.0.1:${PHISH_API_PORT:-8000}:8000"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    volumes:
+      - ./checkpoints/selected_model:/app/checkpoints/selected_model:ro
+      - ./manifests/model_selection_v2.json:/app/manifests/model_selection_v2.json:ro
+      - ./results/metrics/locked_test.json:/app/results/metrics/locked_test.json:ro
+    healthcheck:
+      test: ["CMD","python","-c","import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/ready',timeout=10)"]
+      interval: 10s
+      timeout: 12s
+      retries: 10
+  web:
+    image: phishshield-local:gate7
+    depends_on:
+      api:
+        condition: service_healthy
+    command: ["streamlit","run","src/phishshield/ui/app.py","--server.address=0.0.0.0","--server.port=8501","--server.headless=true","--server.maxUploadSize=8","--browser.gatherUsageStats=false"]
+    environment:
+      PHISHSHIELD_API_URL: http://api:8000
+    ports: ["127.0.0.1:${PHISH_UI_PORT:-8501}:8501"]
+    read_only: true
+    tmpfs: ["/tmp"]
+    cap_drop: ["ALL"]
+    security_opt: ["no-new-privileges:true"]
+    healthcheck:
+      test: ["CMD","python","-c","import urllib.request; urllib.request.urlopen('http://127.0.0.1:8501/_stcore/health',timeout=5)"]
+      interval: 10s
+      timeout: 6s
+      retries: 8
+

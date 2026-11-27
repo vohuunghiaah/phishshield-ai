@@ -1,0 +1,16 @@
+purpose,version,files
+Baseline checkpoint,BASELINE_V1,18
+Candidate evidence,TUNING_V2,1126
+CompPhish input,4,8
+Feature matrix,1.0.0,2
+Frozen Test metrics,TUNED_V2,1
+Frozen Test predictions,TUNED_V2,1
+Frozen assignments,V1/V2,3
+Inference bundle or selection,TUNED_V2,4
+Provenance and decisions,V1/V2,8
+Refit checkpoint,TUNED_V2,18
+Refit evidence,TUNED_V2,54
+Run or diagnostic evidence,V1/V2,2
+SHAP evidence,TUNED_V2,5
+Scientific input,V1/V2,63
+Shared cohort,4,1

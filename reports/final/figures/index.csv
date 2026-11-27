@@ -1,0 +1,31 @@
+id,file,title
+1,F01_pipeline.png,Đường đi của dữ liệu
+2,F02_preprocessing.png,Kiểm định và làm sạch
+3,F03_classes.png,Phân bố lớp
+4,F04_train_distributions.png,Phân bố trên Train
+5,F05_train_correlations.png,Tương quan Spearman trên Train
+6,F06_groups.png,Gom nhóm và khóa split
+7,F07_search.png,Đánh giá candidate
+8,F08_forest.png,Random Forest chính
+9,F09_boosting.png,Boosting tuần tự
+10,F10_mlp.png,MLP baseline và tuned
+11,F11_random_forest_sweep.png,Controlled sweep random_forest
+12,F12_xgboost_sweep.png,Controlled sweep xgboost
+13,F13_mlp_sweep.png,Controlled sweep mlp
+14,F14_loss.png,Loss theo epoch
+15,F15_f2_15.png,Baseline · Validation
+16,F16_f2_16.png,Tuned · Validation
+17,F17_f2_17.png,Baseline và Tuned · Validation
+18,F18_fpr_18.png,Baseline và Tuned · Validation
+19,F19_f2_19.png,Baseline và Tuned · Validation
+20,F20_ablation.png,Ablation theo modality
+21,F21_threshold.png,Ngưỡng trên Validation
+22,F22_PR.png,PR trên Locked Test
+23,F23_ROC.png,ROC trên Locked Test
+24,F24_confusion.png,Ma trận Test
+25,F25_shap_summary.png,SHAP trên Validation
+26,F26_shap_local.png,SHAP trên Validation
+27,F27_checkpoint_bytes.png,Chi phí theo cặp
+28,F28_training_seconds.png,Chi phí theo cặp
+29,F29_deployment.png,Kiến trúc local
+30,F30_sequence.png,Một yêu cầu phân tích

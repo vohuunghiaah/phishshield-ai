@@ -1,0 +1,4 @@
+version: "1.0.0"
+modalities: [url_only, url_html]
+domain_policy: bundled_public_suffix_list_including_private
+cohort: valid_url_with_parseable_nonempty_snapshot

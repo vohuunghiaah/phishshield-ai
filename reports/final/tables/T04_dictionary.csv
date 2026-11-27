@@ -1,0 +1,35 @@
+feature,type,definition,meaning,limitation,source
+url_length,int,"len(url), ký tự",Độ dài địa chỉ nhập,Không đo số byte,src/phishshield/features/url_features.py
+hostname_length,int,len(hostname),Độ dài phần tên máy,Không phản ánh chủ sở hữu,src/phishshield/features/url_features.py
+path_length,int,len(path),Độ dài đường dẫn gốc,Chưa giải mã phần trăm,src/phishshield/features/url_features.py
+subdomain_count,int,Số nhãn dưới registrable domain theo PSL,Mức phân cấp tên miền,"IP nhận 0, phụ thuộc PSL đóng gói",src/phishshield/features/url_features.py
+dot_count,int,Đếm dấu chấm trên cả URL,Mật độ dấu phân cách,Tính cả path và query,src/phishshield/features/url_features.py
+hyphen_count,int,Đếm gạch nối trên cả URL,Cấu trúc tên và đường dẫn,Tên hợp lệ cũng dùng gạch nối,src/phishshield/features/url_features.py
+digit_count,int,Tổng ký tự thỏa isdigit,Số ký tự số,Gồm chữ số Unicode,src/phishshield/features/url_features.py
+digit_ratio,float,digit_count / url_length,Tỷ trọng chữ số,URL rỗng bị loại trước phép chia,src/phishshield/features/url_features.py
+special_count,int,Đếm ký tự không thỏa isalnum,Dấu câu và phân cách,Tính cả ký tự của scheme,src/phishshield/features/url_features.py
+query_count,int,"Số cặp parse_qsl, giữ giá trị rỗng",Số tham số truy vấn,Khóa lặp được đếm nhiều lần,src/phishshield/features/url_features.py
+https,binary,scheme bằng https,Giao thức được khai báo,Không kiểm tra chứng thư,src/phishshield/features/url_features.py
+ip_host,binary,ipaddress nhận diện hostname,Địa chỉ IP trực tiếp,IP hợp lệ cũng phục vụ trang nội bộ,src/phishshield/features/url_features.py
+keyword_count,int,"Tổng count của login, verify, secure, account, password, update, bank, signin trên URL chữ thường",Dấu hiệu từ vựng,"Đếm chuỗi con, phụ thuộc ngôn ngữ",src/phishshield/features/url_features.py
+entropy,float,"−Σ p(c) log₂ p(c), bit/ký tự",Đa dạng phân bố ký tự,Không xét thứ tự,src/phishshield/features/url_features.py
+encoded_count,int,Số chuỗi % kèm hai chữ số hex,Mức mã hóa URL,Mã hóa là hợp lệ,src/phishshield/features/url_features.py
+punycode,binary,Có nhãn hostname bắt đầu xn--,Dấu hiệu IDN dạng ASCII,Không phát hiện mọi tên gần giống,src/phishshield/features/url_features.py
+explicit_port,binary,urlsplit.port có giá trị,Cổng khai báo tường minh,Vẫn đếm khi là cổng mặc định,src/phishshield/features/url_features.py
+html_length,int,len(html) sau giải mã,Quy mô snapshot,Không bằng kích thước ZIP,src/phishshield/features/html_features.py
+tag_count,int,Số node có tag kiểu str trong cây lxml,Độ phức tạp cây,Gồm node parser tự bổ sung,src/phishshield/features/html_features.py
+form_count,int,Số phần tử form,Sự hiện diện biểu mẫu,Không nói rõ mục đích,src/phishshield/features/html_features.py
+password_count,int,Số input có type password sau strip/lower,Điểm nhập mật khẩu,Đăng nhập hợp lệ cũng có,src/phishshield/features/html_features.py
+hidden_count,int,Số input có type hidden sau strip/lower,Trường ẩn trong biểu mẫu,Không kiểm tra CSS,src/phishshield/features/html_features.py
+external_link_ratio,float,"Số đích anchor ngoài domain / max(1,số đích HTTP(S) hợp lệ)",Tỷ lệ liên kết ra ngoài,Không có link hợp lệ nhận 0,src/phishshield/features/html_features.py
+external_action_count,int,Số form có action HTTP(S) sang domain khác,Điểm gửi biểu mẫu,SSO hợp lệ có thể dùng domain khác,src/phishshield/features/html_features.py
+iframe_count,int,Số phần tử iframe,Nội dung nhúng,Không tải frame,src/phishshield/features/html_features.py
+script_count,int,Số phần tử script,Mức dùng mã script,Không thực thi mã,src/phishshield/features/html_features.py
+external_script_count,int,Số script src HTTP(S) ngoài registrable domain,Phụ thuộc ngoài trang,CDN cũng được đếm,src/phishshield/features/html_features.py
+image_count,int,Số phần tử img,Mật độ ảnh,Không tải ảnh,src/phishshield/features/html_features.py
+anchor_count,int,Số phần tử a,Mật độ điều hướng,Kể cả anchor thiếu href,src/phishshield/features/html_features.py
+empty_action_count,int,Số form thiếu action hoặc trống sau strip,Gửi về cùng tài liệu,Hợp lệ theo HTML,src/phishshield/features/html_features.py
+has_title,binary,Có title có văn bản sau strip,Metadata của trang,Không đánh giá nội dung,src/phishshield/features/html_features.py
+has_favicon,binary,Có link với token icon trong rel chữ thường,Khai báo biểu tượng,Không kiểm tra tài nguyên tồn tại,src/phishshield/features/html_features.py
+suspicious_form_count,int,"Số form action khác domain hoặc có password và method GET, mặc định GET",Mẫu gửi dữ liệu đáng xem xét,Hai điều kiện trên một form chỉ đếm một lần,src/phishshield/features/html_features.py
+sensitive_input,binary,"Có password, passwd, otp, cc-number, creditcard, ssn trong type/name/id/autocomplete",Dấu hiệu nhập dữ liệu nhạy cảm,Heuristic theo chuỗi con,src/phishshield/features/html_features.py

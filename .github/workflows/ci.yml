@@ -1,0 +1,20 @@
+name: Product validation
+on: [push, pull_request, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  cpu:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: false
+      - run: uv sync --frozen --python 3.11.15 --extra demo --extra test --extra tuning --extra trees
+      - run: uvx --from ruff==0.12.12 ruff check --select E9,F63,F7,F82 src scripts tests
+      - run: uv run --no-sync python scripts/public_audit.py
+      - run: uv run --no-sync pytest -q
+      - run: uv build --wheel
+      - run: docker compose config --quiet && docker build -t phishshield-ci .
+

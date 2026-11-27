@@ -1,0 +1,53 @@
+model,modality,parameter,baseline,selected,space,changed,trial,source
+random_forest,url_only,n_estimators,200,300,"[50, 100, 200, 300, 500]",True,C022,results/tuning_v2/random_forest/url_only/tuning_lock.json
+random_forest,url_only,min_samples_leaf,2,4,"[1, 2, 4, 8]",True,C022,results/tuning_v2/random_forest/url_only/tuning_lock.json
+random_forest,url_only,n_jobs,-1,-1,[-1],False,C022,results/tuning_v2/random_forest/url_only/tuning_lock.json
+random_forest,url_only,class_weight,"""balanced""",null,"[null, ""balanced""]",True,C022,results/tuning_v2/random_forest/url_only/tuning_lock.json
+random_forest,url_only,max_depth,null,10,"[10, 20, 30, null]",True,C022,results/tuning_v2/random_forest/url_only/tuning_lock.json
+random_forest,url_only,max_features,"""sqrt""","""log2""","[""sqrt"", ""log2"", 0.5]",True,C022,results/tuning_v2/random_forest/url_only/tuning_lock.json
+random_forest,url_only,min_samples_split,2,5,"[2, 5, 10]",True,C022,results/tuning_v2/random_forest/url_only/tuning_lock.json
+random_forest,url_html,n_estimators,200,300,"[50, 100, 200, 300, 500]",True,C019,results/tuning_v2/random_forest/url_html/tuning_lock.json
+random_forest,url_html,min_samples_leaf,2,2,"[1, 2, 4, 8]",False,C019,results/tuning_v2/random_forest/url_html/tuning_lock.json
+random_forest,url_html,n_jobs,-1,-1,[-1],False,C019,results/tuning_v2/random_forest/url_html/tuning_lock.json
+random_forest,url_html,class_weight,"""balanced""",null,"[null, ""balanced""]",True,C019,results/tuning_v2/random_forest/url_html/tuning_lock.json
+random_forest,url_html,max_depth,null,null,"[10, 20, 30, null]",False,C019,results/tuning_v2/random_forest/url_html/tuning_lock.json
+random_forest,url_html,max_features,"""sqrt""","""log2""","[""sqrt"", ""log2"", 0.5]",True,C019,results/tuning_v2/random_forest/url_html/tuning_lock.json
+random_forest,url_html,min_samples_split,2,5,"[2, 5, 10]",True,C019,results/tuning_v2/random_forest/url_html/tuning_lock.json
+xgboost,url_only,n_estimators,250,100,"[100, 200, 250, 300, 500]",True,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,learning_rate,0.06,0.06,"[0.01, 0.03, 0.06, 0.1]",False,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,max_depth,5,3,"[3, 5, 7, 9]",True,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,tree_method,"""hist""","""hist""","[""hist""]",False,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,eval_metric,"""logloss""","""logloss""","[""logloss""]",False,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,n_jobs,2,2,[2],False,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,min_child_weight,1,1,"[1, 3, 5]",False,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,subsample,1.0,1.0,"[0.7, 0.8, 1.0]",False,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,colsample_bytree,1.0,1.0,"[0.7, 0.8, 1.0]",False,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,gamma,0,0.5,"[0, 0.1, 0.5]",True,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,reg_alpha,0,0.1,"[0, 0.1, 1]",True,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_only,reg_lambda,1,10,"[0.1, 1, 5, 10]",True,C006,results/tuning_v2/xgboost/url_only/tuning_lock.json
+xgboost,url_html,n_estimators,250,300,"[100, 200, 250, 300, 500]",True,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,learning_rate,0.06,0.06,"[0.01, 0.03, 0.06, 0.1]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,max_depth,5,5,"[3, 5, 7, 9]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,tree_method,"""hist""","""hist""","[""hist""]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,eval_metric,"""logloss""","""logloss""","[""logloss""]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,n_jobs,2,2,[2],False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,min_child_weight,1,1,"[1, 3, 5]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,subsample,1.0,1.0,"[0.7, 0.8, 1.0]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,colsample_bytree,1.0,1.0,"[0.7, 0.8, 1.0]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,gamma,0,0,"[0, 0.1, 0.5]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,reg_alpha,0,0,"[0, 0.1, 1]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+xgboost,url_html,reg_lambda,1,1,"[0.1, 1, 5, 10]",False,C004,results/tuning_v2/xgboost/url_html/tuning_lock.json
+mlp,url_only,hidden,64,256,"[32, 64, 128, 256]",True,C021,results/tuning_v2/mlp/url_only/tuning_lock.json
+mlp,url_only,batch_size,128,64,"[32, 64, 128, 256]",True,C021,results/tuning_v2/mlp/url_only/tuning_lock.json
+mlp,url_only,epochs,80,150,"[80, 150, 200]",True,C021,results/tuning_v2/mlp/url_only/tuning_lock.json
+mlp,url_only,patience,8,8,[8],False,C021,results/tuning_v2/mlp/url_only/tuning_lock.json
+mlp,url_only,learning_rate,0.001,0.0005,"[0.0001, 0.0005, 0.001]",True,C021,results/tuning_v2/mlp/url_only/tuning_lock.json
+mlp,url_only,weight_decay,0,0.001,"[0, 0.0001, 0.001]",True,C021,results/tuning_v2/mlp/url_only/tuning_lock.json
+mlp,url_only,dropout,0,0.1,"[0, 0.1, 0.3]",True,C021,results/tuning_v2/mlp/url_only/tuning_lock.json
+mlp,url_html,hidden,64,256,"[32, 64, 128, 256]",True,C021,results/tuning_v2/mlp/url_html/tuning_lock.json
+mlp,url_html,batch_size,128,64,"[32, 64, 128, 256]",True,C021,results/tuning_v2/mlp/url_html/tuning_lock.json
+mlp,url_html,epochs,80,150,"[80, 150, 200]",True,C021,results/tuning_v2/mlp/url_html/tuning_lock.json
+mlp,url_html,patience,8,8,[8],False,C021,results/tuning_v2/mlp/url_html/tuning_lock.json
+mlp,url_html,learning_rate,0.001,0.0005,"[0.0001, 0.0005, 0.001]",True,C021,results/tuning_v2/mlp/url_html/tuning_lock.json
+mlp,url_html,weight_decay,0,0.001,"[0, 0.0001, 0.001]",True,C021,results/tuning_v2/mlp/url_html/tuning_lock.json
+mlp,url_html,dropout,0,0.1,"[0, 0.1, 0.3]",True,C021,results/tuning_v2/mlp/url_html/tuning_lock.json

@@ -1,0 +1,27 @@
+id,check,criterion,evidence,status
+QC01,Dataset,8 tệp khớp SHA công bố,manifests/dataset_manifest.json,PASS
+QC02,Cohort,"15.327 ID, digest khớp lock",data/splits/lock.json,PASS
+QC03,Schema,17/34 cột đúng phiên bản và thứ tự,manifests/features.json,PASS
+QC04,Split,"Tổng 10.729 / 2.299 / 2.299, khớp hash",data/splits/assignments.csv,PASS
+QC05,Giao tập,0 URL/domain/exact HTML hash thuộc nhiều split,scripts/final_audit.py,PASS
+QC06,CV group,0 group đi qua hai outer fold,data/splits/cv_folds.csv,PASS
+QC07,Preprocessing,"Mean, variance, n của scaler bằng phần fit tương ứng",scripts/final_audit.py,PASS
+QC08,Baseline,"18 tổ hợp duy nhất, COMPLETED",manifests/baseline_v1.json,PASS
+QC09,Tuning,144 trial có OOF và manifest hợp lệ,reports/final/experiment_integrity.csv,PASS
+QC10,Fold,432 phép đánh giá có số dòng và metric khớp,reports/final/experiment_integrity.csv,PASS
+QC11,Khóa tuning,"6 winner theo thứ tự F2, Precision, FPR và tie-break",results/tuning_v2/,PASS
+QC12,Tuned,18 refit hợp lệ có tuning lock tương ứng,manifests/tuned_v2.json,PASS
+QC13,Bất biến baseline,"Đối chiếu config, metric, manifest và checkpoint V1",manifests/baseline_v1.json,PASS
+QC14,Checkpoint,SHA khớp bytes trước khi nạp,reports/final/artifact_checksums.json,PASS
+QC15,Tái lập metric,"Replay Validation, OOF và metric Test từ dự đoán lưu",reports/final/audit_summary.json,PASS
+QC16,Ngưỡng,Tính lại xếp hạng ngưỡng OOF và Validation theo luật khóa,scripts/final_audit.py,PASS
+QC17,Selection,Xếp lại sáu cặp V2 và chọn seed khớp SHA checkpoint,manifests/model_selection_v2.json,PASS
+QC18,Phê duyệt,"APPROVED trỏ đúng SHA selection, mtime theo trình tự",manifests/project_leader_approval.json,PASS
+QC19,Locked Test,"2.299 ID, nhãn, ngưỡng và toàn bộ metric khớp artifact",results/metrics/locked_test.json,PASS
+QC20,SHAP,"24 ID × 34 cột, base và tính cộng khớp checkpoint",results/explanations/contributions.csv,PASS
+QC21,Feature parity,24 snapshot Validation được trích lại theo hai schema,scripts/final_audit.py,PASS
+QC22,Dự đoán API,"So nhãn, điểm, ngưỡng và đóng góp với offline",reports/final/http_evidence.json,PASS
+QC23,Fallback,"URL-only dùng seed 44, 17 cột và ngưỡng 0,15",reports/final/http_evidence.json,PASS
+QC24,UI ↔ API,Thao tác trình duyệt và POST xuất hiện trong access log,reports/final/local_server.log,PASS
+QC25,Đầu vào tĩnh,"Kiểm 413, 422, checksum, HTML và lỗi backend",reports/final/pytest.xml,PASS
+QC26,Tái lập,"Có hướng dẫn, kết quả phân tích và bằng chứng chạy cục bộ",docs/final/DEPLOYMENT_GUIDE.md,PASS
