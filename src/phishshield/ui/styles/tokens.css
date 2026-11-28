@@ -1,0 +1,8 @@
+:root{
+  --ink:#172b36; --muted:#485e68; --nav:#142d3a; --nav-weak:#c2d4d9;
+  --canvas:#f5f7f8; --paper:#fff; --edge:#d3dee2; --line:#84969c;
+  --primary:#16584c; --normal:#206547; --threat:#9f3433; --focus:#197580;
+  --space-1:4px; --space-2:8px; --space-3:12px; --space-4:16px;
+  --space-5:24px; --space-6:32px; --space-7:48px; --radius:6px;
+  --type:"Be Vietnam Pro","Segoe UI",sans-serif;
+}

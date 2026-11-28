@@ -1,0 +1,31 @@
+{
+  "fixtures": [
+    {
+      "role": "primary",
+      "old_score": 0.15434539841045788,
+      "score": 0.15434539841045788,
+      "threshold": 0.2,
+      "features": 34,
+      "label": 0,
+      "sha256": "0a78a47a3a46579cabed3da4d68ed926573fd87df3df45afc9d59e24468ef948"
+    },
+    {
+      "role": "url_fallback",
+      "old_score": 0.05207749236559011,
+      "score": 0.05207749236559011,
+      "threshold": 0.15,
+      "features": 17,
+      "label": 0,
+      "sha256": "0ce231574e7d61d7fdedb65b85f00c7cc1ecdd5e02859cb48bb4ea955f9a2897"
+    }
+  ],
+  "full_scan": {
+    "fixture_sha256": "25ddf2c883e0d1958ea971d279a7e4f0fd446724ee3db7db19dadabd4a62e484",
+    "old_score": 0.11169502608384249,
+    "score": 0.11169502608384252,
+    "absolute_difference": 2.7755575615628914e-17,
+    "features": 34,
+    "threshold": 0.2,
+    "model_version": "0a78a47a3a46"
+  }
+}

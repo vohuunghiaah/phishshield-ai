@@ -69,8 +69,8 @@ def test_static_snapshot_and_chunk_limit(workspace):
 
 def test_ui_handles_unavailable_api(monkeypatch):
     monkeypatch.setenv("PHISHSHIELD_API_URL","http://127.0.0.1:1")
-    a=AppTest.from_file(str(ROOT/"src/phishshield/ui/app.py")).run()
-    a.text_input[0].set_value("https://example.org").run()
-    a.button[0].click().run()
-    assert not a.exception and any("Không kết nối" in x.value for x in a.error)
-
+    app = AppTest.from_file(str(ROOT / "src/phishshield/ui/app.py"), default_timeout=12).run()
+    assert not app.exception
+    assert any("API chưa kết nối" in notice.value for notice in app.error)
+    assert app.button[0].disabled
+    assert all("Full Scan" not in radio.options for radio in app.radio)

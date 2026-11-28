@@ -1,0 +1,90 @@
+[
+  {
+    "view": "scanner",
+    "detectorExit": 2,
+    "lang": "en",
+    "passed": 23,
+    "violations": [
+      {
+        "id": "aria-allowed-attr",
+        "count": 2,
+        "impact": "critical"
+      },
+      {
+        "id": "button-name",
+        "count": 2,
+        "impact": "critical"
+      },
+      {
+        "id": "color-contrast",
+        "count": 1,
+        "impact": "serious"
+      }
+    ],
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  {
+    "view": "quick",
+    "detectorExit": 2,
+    "lang": "en",
+    "passed": 28,
+    "violations": [
+      {
+        "id": "aria-allowed-attr",
+        "count": 3,
+        "impact": "critical"
+      },
+      {
+        "id": "button-name",
+        "count": 2,
+        "impact": "critical"
+      },
+      {
+        "id": "color-contrast",
+        "count": 2,
+        "impact": "serious"
+      },
+      {
+        "id": "link-name",
+        "count": 1,
+        "impact": "serious"
+      },
+      {
+        "id": "summary-name",
+        "count": 1,
+        "impact": "serious"
+      }
+    ],
+    "incomplete": [
+      "color-contrast"
+    ]
+  },
+  {
+    "view": "metrics",
+    "detectorExit": 2,
+    "lang": "en",
+    "passed": 26,
+    "violations": [
+      {
+        "id": "aria-allowed-attr",
+        "count": 2,
+        "impact": "critical"
+      },
+      {
+        "id": "button-name",
+        "count": 3,
+        "impact": "critical"
+      },
+      {
+        "id": "color-contrast",
+        "count": 2,
+        "impact": "serious"
+      }
+    ],
+    "incomplete": [
+      "color-contrast"
+    ]
+  }
+]

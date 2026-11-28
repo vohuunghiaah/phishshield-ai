@@ -1,0 +1,1250 @@
+[
+  {
+    "view": "result",
+    "width": 1440,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 440.5625,
+          "right": 614.5625,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 642.5625,
+          "right": 815.28125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 843.28125,
+          "right": 964.109375,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "documentWidth": 1440,
+      "mainWidth": [
+        1440,
+        1440
+      ],
+      "headings": [
+        "Phân tích website",
+        "Dữ liệu sử dụng",
+        "Chưa phát hiện dấu hiệu vượt ngưỡng",
+        "Dấu hiệu ảnh hưởng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 250,
+          "y": 353,
+          "w": 604,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 249,
+          "y": 408,
+          "w": 99,
+          "h": 46
+        },
+        {
+          "name": "Full Scan",
+          "x": 249,
+          "y": 498,
+          "w": 96,
+          "h": 40
+        },
+        {
+          "name": "Quick Scan",
+          "x": 361,
+          "y": 498,
+          "w": 114,
+          "h": 40
+        },
+        {
+          "name": "Snapshot Analysis (nâng cao)",
+          "x": 492,
+          "y": 498,
+          "w": 260,
+          "h": 40
+        },
+        {
+          "name": "Chi tiết kỹ thuật",
+          "x": 217,
+          "y": 1358,
+          "w": 1006,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 249,
+        "y": 408,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 250,
+        "y": 353,
+        "w": 604,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-deprecated-role",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-required-attr",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-roles",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "scrollable-region-focusable",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "detector": {
+      "exit": 0,
+      "primary": 0,
+      "advisory": 0
+    }
+  },
+  {
+    "view": "metrics",
+    "width": 1440,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 437.609375,
+          "right": 611.609375,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 639.609375,
+          "right": 814.875,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 842.875,
+          "right": 963.703125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "documentWidth": 1440,
+      "mainWidth": [
+        1440,
+        1440
+      ],
+      "headings": [
+        "Hiệu năng mô hình",
+        "Kết quả trên tập Test",
+        "Phạm vi áp dụng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "bypass",
+        "color-contrast",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "target-size",
+        "td-headers-attr",
+        "th-has-data-cells"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": {
+      "exit": 0,
+      "primary": 0,
+      "advisory": 0
+    }
+  },
+  {
+    "view": "guide",
+    "width": 1440,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 437.609375,
+          "right": 611.609375,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 639.609375,
+          "right": 812.328125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 840.328125,
+          "right": 962.484375,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "documentWidth": 1440,
+      "mainWidth": [
+        1440,
+        1440
+      ],
+      "headings": [
+        "Giới thiệu và hướng dẫn",
+        "Chọn phương pháp phân tích",
+        "Giới hạn"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Nghiên cứu và nhóm thực hiện",
+          "x": 217,
+          "y": 635,
+          "w": 1006,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "result",
+    "width": 1280,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 355.59375,
+          "right": 529.59375,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 555.1875,
+          "right": 727.90625,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 753.5,
+          "right": 874.328125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "documentWidth": 1280,
+      "mainWidth": [
+        1280,
+        1280
+      ],
+      "headings": [
+        "Phân tích website",
+        "Dữ liệu sử dụng",
+        "Chưa phát hiện dấu hiệu vượt ngưỡng",
+        "Dấu hiệu ảnh hưởng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 170,
+          "y": 353,
+          "w": 604,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 169,
+          "y": 408,
+          "w": 99,
+          "h": 46
+        },
+        {
+          "name": "Full Scan",
+          "x": 169,
+          "y": 498,
+          "w": 96,
+          "h": 40
+        },
+        {
+          "name": "Quick Scan",
+          "x": 281,
+          "y": 498,
+          "w": 114,
+          "h": 40
+        },
+        {
+          "name": "Snapshot Analysis (nâng cao)",
+          "x": 412,
+          "y": 498,
+          "w": 260,
+          "h": 40
+        },
+        {
+          "name": "Chi tiết kỹ thuật",
+          "x": 137,
+          "y": 1358,
+          "w": 1006,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 169,
+        "y": 408,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 170,
+        "y": 353,
+        "w": 604,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-deprecated-role",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-required-attr",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-roles",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "scrollable-region-focusable",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "metrics",
+    "width": 1280,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 352.640625,
+          "right": 526.640625,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 552.234375,
+          "right": 727.5,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 753.09375,
+          "right": 873.921875,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "documentWidth": 1280,
+      "mainWidth": [
+        1280,
+        1280
+      ],
+      "headings": [
+        "Hiệu năng mô hình",
+        "Kết quả trên tập Test",
+        "Phạm vi áp dụng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "bypass",
+        "color-contrast",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "scrollable-region-focusable",
+        "target-size",
+        "td-headers-attr",
+        "th-has-data-cells"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "guide",
+    "width": 1280,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 352.640625,
+          "right": 526.640625,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 552.234375,
+          "right": 724.953125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 750.546875,
+          "right": 872.703125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "documentWidth": 1280,
+      "mainWidth": [
+        1280,
+        1280
+      ],
+      "headings": [
+        "Giới thiệu và hướng dẫn",
+        "Chọn phương pháp phân tích",
+        "Giới hạn"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Nghiên cứu và nhóm thực hiện",
+          "x": 137,
+          "y": 635,
+          "w": 1006,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "result",
+    "width": 768,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 384,
+          "right": 548,
+          "top": 114.390625,
+          "bottom": 158.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 28.28125,
+          "right": 191.09375,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 384,
+          "right": 498.921875,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        768,
+        1024
+      ],
+      "documentWidth": 768,
+      "mainWidth": [
+        768,
+        768
+      ],
+      "headings": [
+        "Phân tích website",
+        "Dữ liệu sử dụng",
+        "Chưa phát hiện dấu hiệu vượt ngưỡng",
+        "Dấu hiệu ảnh hưởng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 39,
+          "y": 344,
+          "w": 435,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 38,
+          "y": 399,
+          "w": 99,
+          "h": 46
+        },
+        {
+          "name": "Full Scan",
+          "x": 38,
+          "y": 489,
+          "w": 96,
+          "h": 40
+        },
+        {
+          "name": "Quick Scan",
+          "x": 150,
+          "y": 489,
+          "w": 114,
+          "h": 40
+        },
+        {
+          "name": "Snapshot Analysis (nâng cao)",
+          "x": 38,
+          "y": 529,
+          "w": 260,
+          "h": 40
+        },
+        {
+          "name": "Chi tiết kỹ thuật",
+          "x": 17,
+          "y": 1377,
+          "w": 734,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 38,
+        "y": 399,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 39,
+        "y": 344,
+        "w": 435,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-deprecated-role",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-required-attr",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-roles",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "scrollable-region-focusable",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "metrics",
+    "width": 768,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 384,
+          "right": 548,
+          "top": 114.390625,
+          "bottom": 158.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 28.28125,
+          "right": 193.453125,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 384,
+          "right": 498.921875,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        768,
+        1024
+      ],
+      "documentWidth": 768,
+      "mainWidth": [
+        768,
+        768
+      ],
+      "headings": [
+        "Hiệu năng mô hình",
+        "Kết quả trên tập Test",
+        "Phạm vi áp dụng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "bypass",
+        "color-contrast",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "target-size",
+        "td-headers-attr",
+        "th-has-data-cells"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "guide",
+    "width": 768,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 384,
+          "right": 548,
+          "top": 114.390625,
+          "bottom": 158.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 28.28125,
+          "right": 191.09375,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 384,
+          "right": 500.140625,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        768,
+        1024
+      ],
+      "documentWidth": 768,
+      "mainWidth": [
+        768,
+        768
+      ],
+      "headings": [
+        "Giới thiệu và hướng dẫn",
+        "Chọn phương pháp phân tích",
+        "Giới hạn"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Nghiên cứu và nhóm thực hiện",
+          "x": 17,
+          "y": 732,
+          "w": 734,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "result",
+    "width": 390,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 195,
+          "right": 359,
+          "top": 117.59375,
+          "bottom": 161.59375,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 23.03125,
+          "right": 185.84375,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 195,
+          "right": 309.921875,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 390,
+      "mainWidth": [
+        390,
+        390
+      ],
+      "headings": [
+        "Phân tích website",
+        "Chưa phát hiện dấu hiệu vượt ngưỡng",
+        "Dấu hiệu ảnh hưởng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 35,
+          "y": 368,
+          "w": 320,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 34,
+          "y": 423,
+          "w": 99,
+          "h": 46
+        },
+        {
+          "name": "Full Scan",
+          "x": 34,
+          "y": 513,
+          "w": 96,
+          "h": 40
+        },
+        {
+          "name": "Quick Scan",
+          "x": 146,
+          "y": 513,
+          "w": 114,
+          "h": 40
+        },
+        {
+          "name": "Snapshot Analysis (nâng cao)",
+          "x": 34,
+          "y": 553,
+          "w": 260,
+          "h": 40
+        },
+        {
+          "name": "Chi tiết kỹ thuật",
+          "x": 18,
+          "y": 1537,
+          "w": 354,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 34,
+        "y": 423,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 35,
+        "y": 368,
+        "w": 320,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-deprecated-role",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-required-attr",
+        "aria-required-children",
+        "aria-required-parent",
+        "aria-roles",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "scrollable-region-focusable",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "metrics",
+    "width": 390,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 195,
+          "right": 359,
+          "top": 117.59375,
+          "bottom": 161.59375,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 23.03125,
+          "right": 188.203125,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 195,
+          "right": 309.921875,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 390,
+      "mainWidth": [
+        390,
+        390
+      ],
+      "headings": [
+        "Hiệu năng mô hình",
+        "Kết quả trên tập Test",
+        "Phạm vi áp dụng"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "bypass",
+        "color-contrast",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "scrollable-region-focusable",
+        "target-size",
+        "td-headers-attr",
+        "th-has-data-cells"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": null
+  },
+  {
+    "view": "guide",
+    "width": 390,
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 195,
+          "right": 359,
+          "top": 117.59375,
+          "bottom": 161.59375,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 23.03125,
+          "right": 185.84375,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 195,
+          "right": 311.140625,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 390,
+      "mainWidth": [
+        390,
+        390
+      ],
+      "headings": [
+        "Giới thiệu và hướng dẫn",
+        "Chọn phương pháp phân tích",
+        "Giới hạn"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Nghiên cứu và nhóm thực hiện",
+          "x": 18,
+          "y": 887,
+          "w": 354,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": null,
+      "url": null
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "scrollable-region-focusable",
+        "summary-name",
+        "target-size"
+      ],
+      "incomplete": [],
+      "violations": []
+    },
+    "detector": null
+  }
+]
