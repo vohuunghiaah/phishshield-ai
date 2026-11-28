@@ -11,6 +11,7 @@ const path = require('node:path');
   try {
     const page = await browser.newPage({viewport:{width:1330,height:920},deviceScaleFactor:1});
     await page.goto(url);
+    await page.getByText("Quick Scan",{exact:true}).click();
     const shot = async name => {
       await page.locator('[data-testid="stApp"][data-test-script-state="notRunning"]').waitFor();
       await page.locator('[data-stale="true"]').first().waitFor({state:'hidden'});

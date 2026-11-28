@@ -11,3 +11,8 @@
 
 !.streamlit/
 !.streamlit/config.toml
+
+!deploy/
+!deploy/fullscan/
+!deploy/fullscan/firewall.nft
+!deploy/fullscan/start.sh

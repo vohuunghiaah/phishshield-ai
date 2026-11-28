@@ -22,6 +22,15 @@ def call(method, path, payload=None):
     return None
 
 
+@st.cache_data(ttl=5, show_spinner=False)
+def full_scan_available(base):
+    try:
+        response = httpx.get(base+"/capabilities",timeout=2,trust_env=False)
+        return response.is_success and response.json().get("full_scan") is True
+    except (httpx.HTTPError,ValueError):
+        return False
+
+
 def result(r):
     positive = bool(r["prediction"])
     st.subheader("Có dấu hiệu phishing" if positive else "Dưới ngưỡng cảnh báo")
@@ -33,6 +42,8 @@ def result(r):
     first.metric("Điểm phishing",f"{r['phishing_probability']:.3f}")
     second.metric("Ngưỡng Validation",f"{r['threshold']:.2f}")
     role="Primary" if r["feature_modality"]=="url_html" else "Fallback"
+    if r["html_extraction_status"] == "fetched":
+        st.success(f"Đã tải HTML tĩnh · {r['fetch_ms']:.0f} ms")
     if r.get("fallback_reason"):
         st.info(r["fallback_reason"])
     st.caption(f"{role} · {r['model_name']} · {r['feature_modality']} · {r['feature_count']} đặc trưng · {r['model_phase']}")
@@ -62,10 +73,14 @@ if screen == "Trang chủ":
 elif screen in ("Website Scanner","Phân tích nâng cao"):
     st.title(screen)
     advanced=screen=="Phân tích nâng cao"
-    st.write("Phân tích snapshot HTML cùng URL gốc." if advanced else "Phân tích đặc trưng URL bằng mô hình URL-only. Chế độ mặc định xử lý ngoại tuyến.")
-    mode="snapshot" if advanced else st.radio("Chế độ",["Quick Scan","Full Scan"],horizontal=True)
+    st.write("Phân tích snapshot HTML cùng URL gốc." if advanced else "Nhập URL để phân tích website. Quick Scan chỉ sử dụng địa chỉ.")
+    live = not advanced and full_scan_available(API)
+    mode="snapshot" if advanced else st.radio("Chế độ",["Quick Scan","Full Scan"],index=int(live),horizontal=True)
     if mode=="Full Scan":
-        st.info("Thu thập HTML trực tuyến chưa được bật. Khi phân tích, ứng dụng chuyển sang Quick Scan và ghi rõ lý do.")
+        if live:
+            st.caption("Worker cô lập sẽ tải HTML tĩnh. Nếu website không cung cấp được HTML, kết quả sẽ ghi rõ lý do.")
+        else:
+            st.caption("Worker thu thập chưa sẵn sàng. Quick Scan vẫn hoạt động ngoại tuyến.")
     url=st.text_input("URL cần kiểm tra",placeholder="https://example.org/")
     html=None
     if advanced:

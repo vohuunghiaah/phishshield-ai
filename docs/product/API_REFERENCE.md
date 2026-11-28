@@ -6,7 +6,9 @@ Base mặc định là http://127.0.0.1:8000. GET /health kiểm tiến trình, 
 |---|---|
 | {"url":"https://example.org/","mode":"quick"} | url_only, 17 cột, ngưỡng 0,15 |
 | {"url":"https://example.org/","mode":"snapshot","html":"<p>Demo</p>"} | url_html, 34 cột, ngưỡng 0,20 |
-| {"url":"https://example.org/","mode":"full"} | Full Scan bị khóa; url_only và fallback_reason nêu lý do |
+| {"url":"https://example.org/","mode":"full"} | `fetched` → `url_html`, 34 đặc trưng, ngưỡng 0,20. `fetch_failed` → `url_only`, 17 đặc trưng và lý do |
+
+`GET /capabilities` trả `full_scan` theo trạng thái worker. `fetch_ms` đo thời gian gọi worker, kể cả khi website không trả được HTML. Khi chạy ngoại tuyến, yêu cầu Full Scan trả trạng thái `disabled` và lý do chuyển nhánh. Đích bị chính sách mạng chặn trả HTTP 422. Worker đã cấu hình nhưng mất kết nối hoặc quá tải trả HTTP 503.
 
 Khi bỏ mode, có HTML thì dùng primary, chỉ có URL dùng fallback. Nhãn 1 khi score ≥ ngưỡng. Các trường gồm prediction, phishing_probability, threshold, risk_level, model_name, model_version (prefix SHA), model_phase, feature_modality, feature_count, html_extraction_status, fallback_reason, processing_ms, explanation và warnings. Trong explanation, giá trị thực và contribution có dấu cho tối đa năm biến. processing_ms đo nạp model và suy luận tại backend, không gồm thời gian truyền body.
 

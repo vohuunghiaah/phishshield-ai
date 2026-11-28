@@ -1,0 +1,23 @@
+# Standalone worker for the native launcher; no shared network with model services.
+name: phishshield-fetch
+services:
+  fetcher:
+    build:
+      context: .
+      target: fetcher
+    image: phishshield-fetch:local
+    ports:
+      - "127.0.0.1:${PHISH_FETCH_PORT:-18731}:8731"
+    networks: [egress]
+    read_only: true
+    tmpfs: ["/tmp:size=16m,noexec,nosuid,nodev"]
+    cap_drop: [ALL]
+    cap_add: [NET_ADMIN, SETPCAP, SETUID, SETGID]
+    security_opt: ["no-new-privileges:true"]
+    pids_limit: 48
+    mem_limit: 384m
+    cpus: 1
+    restart: unless-stopped
+networks:
+  egress:
+    driver: bridge

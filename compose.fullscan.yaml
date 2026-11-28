@@ -1,0 +1,20 @@
+# Overlay for a complete container deployment (API, UI and confined collector).
+services:
+  api:
+    environment:
+      PHISHSHIELD_FETCHER_URL: http://fetcher:8731
+    networks: [default, collector_control]
+  fetcher:
+    extends:
+      file: compose.fetcher.yaml
+      service: fetcher
+    ports: !reset []
+    networks:
+      egress:
+        gw_priority: 1
+      collector_control: {}
+networks:
+  egress:
+    driver: bridge
+  collector_control:
+    internal: true

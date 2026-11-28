@@ -17,4 +17,13 @@ jobs:
       - run: uv run --no-sync pytest -q
       - run: uv build --wheel
       - run: docker compose config --quiet && docker build -t phishshield-ci .
-
+      - name: Verify isolated collector startup
+        run: |
+          docker compose -f compose.yaml -f compose.fullscan.yaml config --quiet
+          docker compose -f compose.fetcher.yaml up --build -d
+          curl --retry 20 --retry-all-errors --retry-delay 1 --max-time 4 -fsS http://127.0.0.1:18731/health -o "$RUNNER_TEMP/collector-health.json"
+          python -c "import json,sys; assert json.load(open(sys.argv[1]))['confinement']=='active'" "$RUNNER_TEMP/collector-health.json"
+      - if: failure()
+        run: docker compose -f compose.fetcher.yaml logs --tail 40
+      - if: always()
+        run: docker compose -f compose.fetcher.yaml down

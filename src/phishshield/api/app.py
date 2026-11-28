@@ -11,6 +11,7 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
 from phishshield.features.url_features import parse_url
+from phishshield.inference import collector
 from phishshield.inference.service import predict, selected
 from phishshield.inference.service import read_json
 
@@ -84,6 +85,10 @@ def create_app(root=None):
     def health():
         return {"status":"ok"}
 
+    @app.get("/capabilities")
+    def capabilities():
+        return {"full_scan": collector.available()}
+
     @app.get("/ready")
     def ready():
         for role in ("primary","url_fallback"):
@@ -146,7 +151,23 @@ def create_app(root=None):
                 raise HTTPException(413,"Snapshot quá lớn.")
             return infer(inp.url,inp.html,"snapshot")
         if inp.mode == "full":
-            return infer(inp.url,None,"disabled","Full Scan chưa có egress cô lập đã xác minh. Đã phân tích URL ngoại tuyến.")
+            if not os.environ.get("PHISHSHIELD_FETCHER_URL"):
+                return infer(inp.url,None,"disabled","Full Scan chưa có egress cô lập đã xác minh. Đã phân tích URL ngoại tuyến.")
+            start = time.perf_counter()
+            try:
+                document = collector.collect(inp.url)
+            except collector.DestinationBlocked:
+                raise HTTPException(422,"Đích URL không được chính sách mạng Full Scan cho phép.") from None
+            except collector.WorkerUnavailable:
+                raise HTTPException(503,"Dịch vụ thu thập HTML chưa sẵn sàng.") from None
+            fetch_ms = round(1000*(time.perf_counter()-start), 3)
+            if document is None:
+                result = infer(inp.url,None,"fetch_failed","Website không trả về HTML tĩnh phù hợp trong giới hạn. Đã dùng Quick Scan.")
+            else:
+                final_url, html = document
+                result = infer(final_url,html,"fetched")
+            result["fetch_ms"] = fetch_ms
+            return result
         return infer(inp.url,None,"disabled")
 
     @app.post("/predict-from-html")
