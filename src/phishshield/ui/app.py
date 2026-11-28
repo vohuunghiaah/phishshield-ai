@@ -1,139 +1,45 @@
-import os
-
-import httpx
-import pandas as pd
+"""Streamlit entry point for the local analysis workspace."""
 import streamlit as st
 
-API = os.environ.get("PHISHSHIELD_API_URL", "http://127.0.0.1:8000").rstrip("/")
-st.set_page_config(page_title="PhishShield AI", page_icon="🛡️", layout="centered")
-st.sidebar.title("🛡️ PhishShield AI")
-screen = st.sidebar.radio("Điều hướng", ["Trang chủ","Website Scanner","Phân tích nâng cao","Kết quả","Giải thích","Hiệu năng","Giới thiệu"],index=1,key="screen")
-st.sidebar.caption("Phát hiện phishing từ URL và HTML tĩnh")
+from phishshield.ui.api_client import BASE, capabilities
+from phishshield.ui.presentation import ROOT, brand, heading, status, stylesheet
+from phishshield.ui.reference import guide, performance
+from phishshield.ui.report import render
+from phishshield.ui.scanner import scanner
+
+st.set_page_config(page_title="PhishShield AI", page_icon=ROOT / "assets/mark.svg", layout="wide")
+st.html(stylesheet())
+live = capabilities(BASE)
 
 
-def call(method, path, payload=None):
-    try:
-        response = httpx.request(method,API+path,json=payload,timeout=25)
-        if response.is_success:
-            return response.json()
-        st.error(response.json().get("detail","API chưa thể xử lý yêu cầu."))
-    except (httpx.HTTPError, ValueError):
-        st.error("Không kết nối được API. Kiểm tra tiến trình FastAPI trên máy chủ.")
-    return None
+def scan_page():
+    scanner(live)
 
 
-@st.cache_data(ttl=5, show_spinner=False)
-def full_scan_available(base):
-    try:
-        response = httpx.get(base+"/capabilities",timeout=2,trust_env=False)
-        return response.is_success and response.json().get("full_scan") is True
-    except (httpx.HTTPError,ValueError):
-        return False
-
-
-def result(r):
-    positive = bool(r["prediction"])
-    st.subheader("Có dấu hiệu phishing" if positive else "Dưới ngưỡng cảnh báo")
-    if positive:
-        st.warning("Website có dấu hiệu phishing theo mô hình. Hãy thận trọng và tránh cung cấp thông tin nhạy cảm.")
+def report_page():
+    if "report" in st.session_state:
+        st.title("Báo cáo phân tích")
+        render(st.session_state.report)
     else:
-        st.info("Mô hình chưa phát hiện dấu hiệu phishing vượt ngưỡng đã cấu hình. Kết quả không bảo đảm website hoàn toàn an toàn.")
-    first,second = st.columns(2)
-    first.metric("Điểm phishing",f"{r['phishing_probability']:.3f}")
-    second.metric("Ngưỡng Validation",f"{r['threshold']:.2f}")
-    role="Primary" if r["feature_modality"]=="url_html" else "Fallback"
-    if r["html_extraction_status"] == "fetched":
-        st.success(f"Đã tải HTML tĩnh · {r['fetch_ms']:.0f} ms")
-    if r.get("fallback_reason"):
-        st.info(r["fallback_reason"])
-    st.caption(f"{role} · {r['model_name']} · {r['feature_modality']} · {r['feature_count']} đặc trưng · {r['model_phase']}")
-    st.caption(f"Phiên bản {r['model_version']} · HTML: {r['html_extraction_status']} · Xử lý {r['processing_ms']:.1f} ms")
+        heading("Báo cáo phân tích", "Chưa có kết quả trong phiên này. Phân tích một địa chỉ để xem điểm, ngưỡng và các dấu hiệu ảnh hưởng.")
+        st.page_link(scan, label="Mở công cụ phân tích", icon=":material/arrow_forward:")
 
 
-def explanation(r):
-    st.subheader("Các yếu tố đóng góp")
-    st.write(r["explanation"]["method"]+". Giá trị dương làm tăng điểm theo thứ tự thay thế đã định.")
-    rows=r["explanation"]["contributions"]
-    if rows:
-        frame=pd.DataFrame(rows).rename(columns={"feature":"Đặc trưng","value":"Giá trị","contribution":"Đóng góp"})
-        st.bar_chart(frame.set_index("Đặc trưng")["Đóng góp"],horizontal=True,color="#16756c")
-        st.dataframe(frame,hide_index=True,use_container_width=True)
-        top=rows[0]
-        action="tăng" if top["contribution"]>0 else "giảm"
-        st.write(f"Với giá trị {top['value']:.3g}, {top['feature']} làm {action} điểm {abs(top['contribution']):.3f} trong phép thay biến này.")
-    else:
-        st.caption("Không có thay đổi điểm ở các bước thay thế.")
-    st.caption("Đóng góp cục bộ phụ thuộc thứ tự. SHAP là phân tích riêng trên tập Validation.")
-
-
-if screen == "Trang chủ":
-    st.title("🛡️ PhishShield AI")
-    st.button("Bắt đầu phân tích",on_click=lambda: st.session_state.update(screen="Website Scanner"))
-    st.write("Kiểm tra một địa chỉ bằng mô hình đã huấn luyện trên CompPhish v4. Chọn Website Scanner cho URL, hoặc Phân tích nâng cao nếu đã có snapshot HTML.")
-elif screen in ("Website Scanner","Phân tích nâng cao"):
-    st.title(screen)
-    advanced=screen=="Phân tích nâng cao"
-    st.write("Phân tích snapshot HTML cùng URL gốc." if advanced else "Nhập URL để phân tích website. Quick Scan chỉ sử dụng địa chỉ.")
-    live = not advanced and full_scan_available(API)
-    mode="snapshot" if advanced else st.radio("Chế độ",["Quick Scan","Full Scan"],index=int(live),horizontal=True)
-    if mode=="Full Scan":
-        if live:
-            st.caption("Worker cô lập sẽ tải HTML tĩnh. Nếu website không cung cấp được HTML, kết quả sẽ ghi rõ lý do.")
-        else:
-            st.caption("Worker thu thập chưa sẵn sàng. Quick Scan vẫn hoạt động ngoại tuyến.")
-    url=st.text_input("URL cần kiểm tra",placeholder="https://example.org/")
-    html=None
-    if advanced:
-        source=st.radio("Nguồn HTML",["Dán HTML","Tải tệp UTF-8"],horizontal=True)
-        if source=="Dán HTML":
-            html=st.text_area("HTML snapshot",height=150)
-        else:
-            upload=st.file_uploader("Snapshot HTML tối đa 8 MiB",type=["html","htm","txt"])
-            if upload:
-                if upload.size>8388608:
-                    st.error("Snapshot quá lớn.")
-                else:
-                    try:
-                        html=upload.getvalue().decode("utf-8-sig")
-                    except UnicodeError:
-                        st.error("Tệp cần dùng UTF-8.")
-    if st.button("Phân tích website",type="primary"):
-        st.session_state.pop("prediction",None)
-        if not url.strip() or (advanced and not (html or "").strip()):
-            st.error("Nhập URL và cung cấp snapshot khi dùng phân tích nâng cao.")
-        else:
-            with st.spinner("Đang phân tích…"):
-                r=call("POST","/predict",{"url":url,"mode":"snapshot" if advanced else ("full" if mode=="Full Scan" else "quick"),**({"html":html} if advanced else {})})
-            if r:
-                st.session_state.prediction=r
-                result(r)
-                explanation(r)
-elif screen in ("Kết quả","Giải thích"):
-    st.title(screen)
-    if "prediction" not in st.session_state:
-        st.info("Chạy Website Scanner hoặc Phân tích nâng cao để xem kết quả.")
-    elif screen=="Kết quả":
-        result(st.session_state.prediction)
-    else:
-        explanation(st.session_state.prediction)
-elif screen=="Hiệu năng":
-    st.title("Hiệu năng trên tập Test")
-    record=call("GET","/performance")
-    if record:
-        m=record["metrics"]
-        st.write("Random Forest URL+HTML · checkpoint chính đã khóa")
-        for group in [("f2","recall","fpr"),("accuracy","precision","roc_auc")]:
-            for c,k in zip(st.columns(3),group):
-                c.metric(k.upper(),f"{m[k]:.3%}")
-        st.caption("CompPhish v4 · 2.299 mẫu Test. Hiệu năng trên website mới phụ thuộc phân bố đầu vào.")
-        st.dataframe(pd.DataFrame(m["confusion_matrix"],index=["Thật · Legitimate","Thật · Phishing"],columns=["Dự đoán legitimate","Dự đoán phishing"]),use_container_width=True)
-        st.caption("Fallback URL-only chưa có đánh giá Test riêng.")
-else:
-    st.title("Giới thiệu")
-    st.write("Đồ án Machine Learning so sánh Random Forest, XGBoost và MLP trên URL và HTML tĩnh của CompPhish v4. Các tập dữ liệu được tách theo domain và nội dung HTML trùng khớp.")
-    st.write("Điểm mô hình phụ thuộc dữ liệu huấn luyện. Trang thay đổi theo thời gian, chiến dịch mới và nội dung tạo bởi JavaScript có thể gây sai số.")
-
-
-    st.write("V2 chọn mô hình theo F2 Validation trung bình rồi chọn checkpoint trong nhóm thắng.")
-    st.write("Gịp Xương Thanh Quyền · Random Forest. Vũ Thị Tuyết Trang · XGBoost. Võ Hữu Nghĩa · MLP và trưởng nhóm.")
-    st.link_button("GitHub · mã nguồn", "https://github.com/vohuunghiaah/phishshield-ai")
+scan = st.Page(scan_page, title="Phân tích website", default=True)
+navigation = [
+    (scan, "Phân tích website", "search"),
+    (st.Page(report_page, title="Báo cáo phân tích", url_path="bao-cao"), "Báo cáo phân tích", "description"),
+    (st.Page(performance, title="Hiệu năng mô hình", url_path="hieu-nang"), "Hiệu năng mô hình", "table_chart"),
+    (st.Page(guide, title="Giới thiệu và hướng dẫn", url_path="huong-dan"), "Hướng dẫn", "menu_book"),
+]
+page = st.navigation([entry[0] for entry in navigation], position="hidden")
+with st.container(key="masthead"):
+    left, right = st.columns([1.4, 1])
+    with left:
+        brand()
+    with right:
+        status(live)
+with st.container(key="navigation"):
+    for destination, label, icon in navigation:
+        st.page_link(destination, label=label, icon=f":material/{icon}:")
+page.run()

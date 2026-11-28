@@ -1,0 +1,1123 @@
+[
+  {
+    "view": "scanner-1440x900",
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 440.5625,
+          "right": 614.5625,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 642.5625,
+          "right": 815.28125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 843.28125,
+          "right": 964.109375,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1440,
+        900
+      ],
+      "documentWidth": 1440,
+      "mainWidth": [
+        1440,
+        1440
+      ],
+      "headings": [
+        "Phân tích website",
+        "Dữ liệu sử dụng",
+        "Cách đọc kết quả"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 250,
+          "y": 353,
+          "w": 604,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 249,
+          "y": 408,
+          "w": 99,
+          "h": 46
+        },
+        {
+          "name": "Full Scan",
+          "x": 249,
+          "y": 498,
+          "w": 96,
+          "h": 40
+        },
+        {
+          "name": "Quick Scan",
+          "x": 361,
+          "y": 498,
+          "w": 114,
+          "h": 40
+        },
+        {
+          "name": "Snapshot Analysis (nâng cao)",
+          "x": 492,
+          "y": 498,
+          "w": 260,
+          "h": 40
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 249,
+        "y": 408,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 250,
+        "y": 353,
+        "w": 604,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-deprecated-role",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-required-attr",
+        "aria-roles",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "avoid-inline-spacing",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "focusTrail": [
+      {
+        "visibleBox": [
+          0,
+          0,
+          1440,
+          900
+        ],
+        "role": "SECTION",
+        "label": "PhishShield AIThu thập HTML sẵn sàngsear",
+        "focus": true,
+        "css": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          239.03125,
+          114.390625,
+          412.5625,
+          160.390625
+        ],
+        "role": "A",
+        "label": "searchPhân tích website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          440.5625,
+          114.390625,
+          614.5625,
+          160.390625
+        ],
+        "role": "A",
+        "label": "descriptionBáo cáo phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          642.5625,
+          114.390625,
+          815.28125,
+          160.390625
+        ],
+        "role": "A",
+        "label": "table_chartHiệu năng mô hình",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          843.28125,
+          114.390625,
+          964.109375,
+          160.390625
+        ],
+        "role": "A",
+        "label": "menu_bookHướng dẫn",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          250,
+          352.71875,
+          854.125,
+          398.71875
+        ],
+        "role": "INPUT",
+        "label": "Địa chỉ website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(118, 118, 118)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          249,
+          407.71875,
+          348.328125,
+          453.71875
+        ],
+        "role": "BUTTON",
+        "label": "Phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "rgba(22, 88, 76, 0.5) 0px 0px 0px 3.2px",
+          "border": "rgb(22, 88, 76)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      }
+    ],
+    "detector": {
+      "exit": 0,
+      "primary": 0,
+      "advisory": 0
+    }
+  },
+  {
+    "view": "scanner-1280x800",
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 355.59375,
+          "right": 529.59375,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 555.1875,
+          "right": 727.90625,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 753.5,
+          "right": 874.328125,
+          "top": 114.390625,
+          "bottom": 160.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        1280,
+        800
+      ],
+      "documentWidth": 1280,
+      "mainWidth": [
+        1280,
+        1280
+      ],
+      "headings": [
+        "Phân tích website",
+        "Dữ liệu sử dụng",
+        "Cách đọc kết quả"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 170,
+          "y": 353,
+          "w": 604,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 169,
+          "y": 408,
+          "w": 99,
+          "h": 46
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 169,
+        "y": 408,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 170,
+        "y": 353,
+        "w": 604,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "avoid-inline-spacing",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "scrollable-region-focusable",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "focusTrail": [
+      {
+        "visibleBox": [
+          0,
+          0,
+          1280,
+          800
+        ],
+        "role": "SECTION",
+        "label": "PhishShield AIThu thập HTML sẵn sàngsear",
+        "focus": true,
+        "css": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          156.46875,
+          114.390625,
+          330,
+          160.390625
+        ],
+        "role": "A",
+        "label": "searchPhân tích website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          355.59375,
+          114.390625,
+          529.59375,
+          160.390625
+        ],
+        "role": "A",
+        "label": "descriptionBáo cáo phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          555.1875,
+          114.390625,
+          727.90625,
+          160.390625
+        ],
+        "role": "A",
+        "label": "table_chartHiệu năng mô hình",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          753.5,
+          114.390625,
+          874.328125,
+          160.390625
+        ],
+        "role": "A",
+        "label": "menu_bookHướng dẫn",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          170,
+          352.71875,
+          774.125,
+          398.71875
+        ],
+        "role": "INPUT",
+        "label": "Địa chỉ website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(118, 118, 118)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          169,
+          407.71875,
+          268.328125,
+          453.71875
+        ],
+        "role": "BUTTON",
+        "label": "Phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "rgba(22, 88, 76, 0.5) 0px 0px 0px 3.2px",
+          "border": "rgb(22, 88, 76)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      }
+    ],
+    "detector": null
+  },
+  {
+    "view": "scanner-768x1024",
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 384,
+          "right": 548,
+          "top": 114.390625,
+          "bottom": 158.390625,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 28.28125,
+          "right": 191.09375,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 384,
+          "right": 498.921875,
+          "top": 150.390625,
+          "bottom": 194.390625,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        768,
+        1024
+      ],
+      "documentWidth": 768,
+      "mainWidth": [
+        768,
+        768
+      ],
+      "headings": [
+        "Phân tích website",
+        "Dữ liệu sử dụng",
+        "Cách đọc kết quả"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 39,
+          "y": 344,
+          "w": 435,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 38,
+          "y": 399,
+          "w": 99,
+          "h": 46
+        },
+        {
+          "name": "Full Scan",
+          "x": 38,
+          "y": 489,
+          "w": 96,
+          "h": 40
+        },
+        {
+          "name": "Quick Scan",
+          "x": 150,
+          "y": 489,
+          "w": 114,
+          "h": 40
+        },
+        {
+          "name": "Snapshot Analysis (nâng cao)",
+          "x": 38,
+          "y": 529,
+          "w": 260,
+          "h": 40
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 38,
+        "y": 399,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 39,
+        "y": 344,
+        "w": 435,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-deprecated-role",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-required-attr",
+        "aria-roles",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "avoid-inline-spacing",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "focusTrail": [
+      {
+        "visibleBox": [
+          0,
+          0,
+          768,
+          1024
+        ],
+        "role": "SECTION",
+        "label": "PhishShield AIThu thập HTML sẵn sàngsear",
+        "focus": true,
+        "css": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          28.28125,
+          114.390625,
+          191.84375,
+          158.390625
+        ],
+        "role": "A",
+        "label": "searchPhân tích website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          384,
+          114.390625,
+          548,
+          158.390625
+        ],
+        "role": "A",
+        "label": "descriptionBáo cáo phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          28.28125,
+          150.390625,
+          191.09375,
+          194.390625
+        ],
+        "role": "A",
+        "label": "table_chartHiệu năng mô hình",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          384,
+          150.390625,
+          498.921875,
+          194.390625
+        ],
+        "role": "A",
+        "label": "menu_bookHướng dẫn",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          38.734375,
+          343.8125,
+          473.859375,
+          389.8125
+        ],
+        "role": "INPUT",
+        "label": "Địa chỉ website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(118, 118, 118)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          37.734375,
+          398.8125,
+          137.0625,
+          444.8125
+        ],
+        "role": "BUTTON",
+        "label": "Phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "rgba(22, 88, 76, 0.5) 0px 0px 0px 3.2px",
+          "border": "rgb(22, 88, 76)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      }
+    ],
+    "detector": null
+  },
+  {
+    "view": "scanner-390x844",
+    "measurement": {
+      "nav": [
+        {
+          "name": "description\n\nBáo cáo phân tích",
+          "left": 195,
+          "right": 359,
+          "top": 117.59375,
+          "bottom": 161.59375,
+          "inside": true
+        },
+        {
+          "name": "table_chart\n\nHiệu năng mô hình",
+          "left": 23.03125,
+          "right": 185.84375,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        },
+        {
+          "name": "menu_book\n\nHướng dẫn",
+          "left": 195,
+          "right": 309.921875,
+          "top": 153.59375,
+          "bottom": 197.59375,
+          "inside": true
+        }
+      ],
+      "viewport": [
+        390,
+        844
+      ],
+      "documentWidth": 390,
+      "mainWidth": [
+        390,
+        390
+      ],
+      "headings": [
+        "Phân tích website",
+        "Cách đọc kết quả"
+      ],
+      "language": "en",
+      "customFont": true,
+      "fontCount": 2,
+      "controls": [
+        {
+          "name": "Địa chỉ website",
+          "x": 35,
+          "y": 368,
+          "w": 320,
+          "h": 46
+        },
+        {
+          "name": "Phân tích",
+          "x": 34,
+          "y": 423,
+          "w": 99,
+          "h": 46
+        },
+        {
+          "name": "Full Scan",
+          "x": 34,
+          "y": 513,
+          "w": 96,
+          "h": 40
+        },
+        {
+          "name": "Quick Scan",
+          "x": 146,
+          "y": 513,
+          "w": 114,
+          "h": 40
+        },
+        {
+          "name": "Snapshot Analysis (nâng cao)",
+          "x": 34,
+          "y": 553,
+          "w": 260,
+          "h": 40
+        }
+      ],
+      "clippedText": [],
+      "submit": {
+        "x": 34,
+        "y": 423,
+        "w": 99,
+        "h": 46
+      },
+      "url": {
+        "x": 35,
+        "y": 368,
+        "w": 320,
+        "h": 46
+      }
+    },
+    "accessibility": {
+      "version": "4.10.3",
+      "passed": [
+        "aria-allowed-attr",
+        "aria-conditional-attr",
+        "aria-deprecated-role",
+        "aria-hidden-body",
+        "aria-hidden-focus",
+        "aria-prohibited-attr",
+        "aria-required-attr",
+        "aria-roles",
+        "aria-valid-attr-value",
+        "aria-valid-attr",
+        "avoid-inline-spacing",
+        "button-name",
+        "bypass",
+        "color-contrast",
+        "definition-list",
+        "dlitem",
+        "document-title",
+        "duplicate-id-aria",
+        "form-field-multiple-labels",
+        "html-has-lang",
+        "html-lang-valid",
+        "image-alt",
+        "label",
+        "link-name",
+        "meta-viewport",
+        "nested-interactive",
+        "scrollable-region-focusable",
+        "target-size"
+      ],
+      "incomplete": [
+        "color-contrast"
+      ],
+      "violations": []
+    },
+    "focusTrail": [
+      {
+        "visibleBox": [
+          0,
+          0,
+          390,
+          844
+        ],
+        "role": "SECTION",
+        "label": "PhishShield AIThu thập HTML sẵn sàngsear",
+        "focus": true,
+        "css": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          23.03125,
+          117.59375,
+          186.59375,
+          161.59375
+        ],
+        "role": "A",
+        "label": "searchPhân tích website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          195,
+          117.59375,
+          359,
+          161.59375
+        ],
+        "role": "A",
+        "label": "descriptionBáo cáo phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          23.03125,
+          153.59375,
+          185.84375,
+          197.59375
+        ],
+        "role": "A",
+        "label": "table_chartHiệu năng mô hình",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          195,
+          153.59375,
+          309.921875,
+          197.59375
+        ],
+        "role": "A",
+        "label": "menu_bookHướng dẫn",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(0, 0, 238) rgb(0, 0, 238) rgba(0, 0, 0, 0)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          34.796875,
+          367.875,
+          355.203125,
+          413.875
+        ],
+        "role": "INPUT",
+        "label": "Địa chỉ website",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "none",
+          "border": "rgb(118, 118, 118)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      },
+      {
+        "visibleBox": [
+          33.796875,
+          422.875,
+          133.125,
+          468.875
+        ],
+        "role": "BUTTON",
+        "label": "Phân tích",
+        "focus": true,
+        "css": {
+          "outline": "rgb(25, 117, 128) solid 3px",
+          "boxShadow": "rgba(22, 88, 76, 0.5) 0px 0px 0px 3.2px",
+          "border": "rgb(22, 88, 76)"
+        },
+        "parent": {
+          "outline": "rgb(23, 43, 54) none 3px",
+          "boxShadow": "none",
+          "border": "rgb(23, 43, 54)"
+        }
+      }
+    ],
+    "detector": {
+      "exit": 0,
+      "primary": 0,
+      "advisory": 0
+    }
+  }
+]

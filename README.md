@@ -2,7 +2,9 @@
 
 Ứng dụng tiếng Việt sàng lọc website bằng Random Forest đã huấn luyện trên CompPhish v4. Nhập URL trong Full Scan để ứng dụng tự tải HTML tĩnh và chạy mô hình chính. Quick Scan phân tích URL ngoại tuyến, còn Snapshot Analysis dùng HTML bạn cung cấp. Streamlit gọi FastAPI qua HTTP. Mỗi kết quả có điểm, ngưỡng thực, phiên bản checkpoint và các yếu tố đóng góp.
 
-![Kết quả với snapshot tổng hợp](reports/product/screenshots/02_html_primary.png)
+![Phân tích website trên giao diện Gate 8](reports/ui_v2/screenshots/after/scanner-1440x900.png)
+
+[Báo cáo nghiệm thu giao diện](reports/ui_v2/UI_V2_ACCEPTANCE_REPORT.md) · [So sánh trước và sau](reports/ui_v2/UI_AUDIT_AFTER.md)
 
 ## Chạy trên Windows
 

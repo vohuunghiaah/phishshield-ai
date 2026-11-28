@@ -35,3 +35,6 @@ explicit = true
 
 [tool.uv.sources]
 torch = [{index = "pytorch-cpu", marker = "sys_platform != 'darwin'"}]
+
+[tool.setuptools.package-data]
+"phishshield.ui" = ["assets/*.ttf", "assets/*.svg", "assets/OFL.txt", "styles/*.css"]

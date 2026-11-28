@@ -39,3 +39,4 @@ private/
 .runtime/
 *.log
 desktop.ini
+!/reports/ui_v2/

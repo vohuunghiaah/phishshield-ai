@@ -1,0 +1,6 @@
+{
+  "worker-offline": "verified",
+  "api-offline": "verified",
+  "checkpoint-unavailable": "verified",
+  "snapshot-invalid": "verified"
+}
